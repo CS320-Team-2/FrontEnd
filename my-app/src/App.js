@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const [errorMessages, error_login] = useState({});
-  const [islogin, setIsSubmitted] = useState(false);
+  const [islogin, login_set_true] = useState(false);
 
   //For test
   const database = [
@@ -20,8 +20,9 @@ function App() {
     }
   ];
 
+
   const errors = {
-    username: "invalid username",
+    username: "This user Id does not exit",
     Password: "invalid password"
   };
 
@@ -36,7 +37,7 @@ function App() {
       if (login_info.password !== Password.value) {
         error_login({ name: "Password", message: errors.Password });
       } else {
-        setIsSubmitted(true);
+        login_set_true(true);
       }
     } else {
       error_login({ name: "username", message: errors.username });
@@ -53,7 +54,7 @@ function App() {
     <div className="form">
       <form onSubmit={login_handle}>
         <div className="input-container">
-          <label>Username </label>
+          <label>User Id </label>
           <input type="text" name="username" required />
           {renderErrorMessage("username")}
         </div>
@@ -71,7 +72,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="login-form">
+      <div className="login_frame">
         <div className="title">Log In</div>
         <img className="logo"
           src={logo}
