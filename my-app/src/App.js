@@ -1,76 +1,69 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { View, Image, StyleSheet } from 'react-native';
+import logo from './ukg_logo.png';
 
 import "./App.css";
 
 function App() {
-  // React States
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessages, error_login] = useState({});
+  const [islogin, setIsSubmitted] = useState(false);
 
-  // User Login info
+  //For test
   const database = [
     {
-      username: "user1",
-      password: "pass1"
+      username: "1234",
+      password: "12345"
     },
     {
-      username: "user2",
-      password: "pass2"
+      username: "4321",
+      password: "4321"
     }
   ];
 
   const errors = {
-    uname: "invalid username",
-    pass: "invalid password"
+    username: "invalid username",
+    Password: "invalid password"
   };
 
-  const handleSubmit = (event) => {
-    //Prevent page reload
+  const login_handle = (event) => {
     event.preventDefault();
 
-    var { uname, pass } = document.forms[0];
+    var { username, Password } = document.forms[0];
 
-    // Find user login info
-    const userData = database.find((user) => user.username === uname.value);
+    const login_info = database.find((user) => user.username === username.value);
 
-    // Compare user info
-    if (userData) {
-      if (userData.password !== pass.value) {
-        // Invalid password
-        setErrorMessages({ name: "pass", message: errors.pass });
+    if (login_info) {
+      if (login_info.password !== Password.value) {
+        error_login({ name: "Password", message: errors.Password });
       } else {
         setIsSubmitted(true);
       }
     } else {
-      // Username not found
-      setErrorMessages({ name: "uname", message: errors.uname });
+      error_login({ name: "username", message: errors.username });
     }
   };
 
-  // Generate JSX code for error message
   const renderErrorMessage = (name) =>
     name === errorMessages.name && (
       <div className="error">{errorMessages.message}</div>
     );
 
-  // JSX code for login form
+
   const renderForm = (
     <div className="form">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={login_handle}>
         <div className="input-container">
           <label>Username </label>
-          <input type="text" name="uname" required />
-          {renderErrorMessage("uname")}
+          <input type="text" name="username" required />
+          {renderErrorMessage("username")}
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="pass" required />
-          {renderErrorMessage("pass")}
+          <input type="password" name="Password" required />
+          {renderErrorMessage("Password")}
         </div>
         <div className="button-container">
-          <input type="submit" />
+          <input type="submit" value="Login"/>
         </div>
       </form>
     </div>
@@ -79,11 +72,11 @@ function App() {
   return (
     <div className="app">
       <div className="login-form">
-        <div className="title">Sign In</div>
-        <Image
-          src="https://github.com/CS320-Team-2/FrontEnd/blob/main/documents/images/ukg_logo.png?raw=true"
-          alt='UKG Icon'/>
-        {isSubmitted ? <div>User is successfully logged in</div> : renderForm}
+        <div className="title">Log In</div>
+        <img className="logo"
+          src={logo}
+          alt='UKG Icon'></img>
+        {islogin ? <div>Logged in</div> : renderForm}
       </div>
     </div>
   );
