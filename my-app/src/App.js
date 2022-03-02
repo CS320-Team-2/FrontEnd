@@ -79,6 +79,7 @@ function App() {
           alt='UKG Icon'></img>
         {islogin ? <div>Logged in</div> : renderForm}
       </div>
+      <label id='copyright'>© 2022 UKG Inc. All rights reserved.</label>
     </div>
   );
 }
