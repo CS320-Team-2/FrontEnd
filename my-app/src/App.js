@@ -60,7 +60,7 @@ function App() {
         </div>
         <div className="input-container">
           <label>Password </label>
-          <input type="password" name="Password" required />
+          <input type="text" name="Password" required />
           {renderErrorMessage("Password")}
         </div>
         <div className="button-container">
