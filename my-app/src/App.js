@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import logo from './ukg_logo.png';
+import Navbar from "./Navbar";
 
 import "./App.css";
 
@@ -72,6 +73,7 @@ function App() {
 
   return (
     <div className="app">
+      <Navbar />
       <div className="login_frame">
         <div className="title">Log In</div>
         <img className="logo"
