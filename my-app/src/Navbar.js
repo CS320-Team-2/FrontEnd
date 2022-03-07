@@ -11,7 +11,7 @@ function Navbar() {
         alt='UKG Icon'></img>
     </div>
     <div className="middle">
-      <button>Create Task</button>
+    <a class="button" href="#popup1"><center>Create Tasks</center></a>
       <button>Request Peer Eval</button>
       <button>Request PTO</button>
     </div>
@@ -19,6 +19,16 @@ function Navbar() {
       <p>DanielBarskiy</p>
       <p>32221178</p>
     </div>
+    <div id="popup1" class="overlay">
+	<div class="popup">
+		<h2>BOX</h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+			Create tasks popup
+		</div>
+	</div>
+</div>
+
   </div>
   );
 }
