@@ -1,117 +1,67 @@
-.hpage {
-    font-family: sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    height: 100vh;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    background-color:#005151 ;
-  }
-  
-  
-  /* .button-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  
-  .list-container {
-    display: flex;
-  } */
-  
-/*   
-  .title {
-    font-size: 25px;
-    margin-bottom: 20px;
-  } */
-
-  .box{
-      width: 720px;
-      height: 600px;
-      margin-left: 75px;
-      color: white;
-  }
-  
-  .in_progress{
-      width: 500px;
-      height: 150;
-      margin-left: 75px;
-      color:darkgray;
-
-  }
-  .prog_box{
-    color:#005151;
-    width: 500px;
-    height: 50px;
-    margin-left: 75px;
-  }
-
-  .prog_title{
-    font-size: 100px;
-    margin-bottom: 20px;
-    color:white;
-  }
-
-  .not_started{
-    width: 500px;
-    height: 150;
-    margin-left: 75px;
-    color:darkgray;
+body {
+  background-color: white;
 }
-.not_box{
-    color:#005151;
-    width: 500px;
-    height: 50px;
-    margin-left: 75px;
-  }
-
-  .not_started_title{
-    font-size: 100px;
-    margin-bottom: 20px;
-    color:white;
-  }
-
- .completed{
-    width: 500px;
-    height: 150;
-    margin-left: 75px;
-    color:darkgray;
+h1 {
+	margin: 100 px;
+  color: black;
+  margin-left: 10px;
+  font-familiy: "Times New Roman", Times, serif;
+  font-size: 30px;
+  margin-top: 50px;
+  
 }
-.compl_box{
-    color:#005151;
-    width: 500px;
-    height: 50px;
-    margin-left: 75px;
-  }
+h2{
+  font-size: 20px;
+  font-familiy: "Times New Roman", Times, serif;
+	color: white;
+  margin-left: 10px;
+  
+  
+}
+p {
+  color: red;
+/* 	background-color: pink; */
+}
 
-  .compl_title{
-    font-size: 100px;
-    margin-bottom: 20px;
-    color:white;
-  }
-  
-  /* .input-container {
-    width: 200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin: 10px;
-    margin-left: 100px;
-  } */
-/*   
-  .logo {
-    height: 100px;
-    width: 240px; 
-    margin-left: 75px;
-  } */
-/*   
-  input[type=text] {
-    border-radius: 4px;
-    box-shadow:inset 0 0 0.7px 0.7px rgba(0, 0, 0, 0.2);}
-  
-  #copyright{
-    color:#fff;
-  } */
+.progboxed {
+  border: 1px solid black ;
+	background-color:  #005151;
+  width: 800px;
+  height: 40px;
+}
+.titlebox{
+/* 	border: 1px solid black ; */
+}
+.notstartboxed{
+	  width: 800px;
+  height: 40px;
+	border: 1px solid black ;
+	background-color:  #005151;
+}
+.completedboxed{
+	  width: 800px;
+  height: 40px;
+		border: 1px solid black ;
+	background-color:  #005151;
+}
+.proglist{
+	background-color: #DEDEDE;
+  width: 800px;
+  height: 100px;
+}
+.completedlist{
+		background-color: #DEDEDE;
+  width: 800px;
+  height: 100px;
+}
+.notstartlist{
+			background-color: #DEDEDE;
+  width: 800px;
+  height: 100px;
+}
+
+.Tester{
+	background-color: pink;
+  width: 800px;
+  height: 100px;
+}
