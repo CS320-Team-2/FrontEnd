@@ -13,28 +13,23 @@ function hpage() {
 
 
   return (
-    <div className="box">
-            <div className = "title"> To Do List</div>
-                <div className="in_progress"> 
-                    <div className='prog_box'>
-                        <div className='prog_title'>In Progress </div>
-                     </div> 
-                 </div>
-                <div className="not_started"> 
-                    <div className='not_box'> 
-                    <div className='not_started_title'> Not Started</div>
-                 </div>
-                 </div>
-                <div className="completed">
-                     <div className = 'compl_box'>
-                         <div className= 'compl_title'> Completed </div>
-                     </div>
-                </div>
-    </div>
+    <div className="titlebox">
+	<h1>  To Do List</h1>
+</div>
+<div className="progboxed">
+	<h2> In Progress Tasks:</h2>
+</div>
+<div className="proglist"> </div>
+
+	<div className="notstartboxed">
+	<h2> Not Started Tasks:</h2>
+</div>
+	<div className = 'notstartlist'> </div>
+	<div className="completedboxed">
+	<h2> Completed Tasks:</h2>
+</div>
+<div className = 'completedlist'> </div>
   );
 }
-
-const rootElement = document.getElementById("hpageroot");
-ReactDOM.render(<hpage />, rootElement);
 
 export default hpage;
