@@ -1,0 +1,67 @@
+body {
+  background-color: white;
+}
+h1 {
+	margin: 100 px;
+  color: black;
+  margin-left: 10px;
+  font-familiy: "Times New Roman", Times, serif;
+  font-size: 30px;
+  margin-top: 50px;
+  
+}
+h2{
+  font-size: 20px;
+  font-familiy: "Times New Roman", Times, serif;
+	color: white;
+  margin-left: 10px;
+  
+  
+}
+p {
+  color: red;
+/* 	background-color: pink; */
+}
+
+.progboxed {
+  border: 1px solid black ;
+	background-color:  #005151;
+  width: 800px;
+  height: 40px;
+}
+.titlebox{
+/* 	border: 1px solid black ; */
+}
+.notstartboxed{
+	  width: 800px;
+  height: 40px;
+	border: 1px solid black ;
+	background-color:  #005151;
+}
+.completedboxed{
+	  width: 800px;
+  height: 40px;
+		border: 1px solid black ;
+	background-color:  #005151;
+}
+.proglist{
+	background-color: #DEDEDE;
+  width: 800px;
+  height: 100px;
+}
+.completedlist{
+		background-color: #DEDEDE;
+  width: 800px;
+  height: 100px;
+}
+.notstartlist{
+			background-color: #DEDEDE;
+  width: 800px;
+  height: 100px;
+}
+
+.Tester{
+	background-color: pink;
+  width: 800px;
+  height: 100px;
+}
