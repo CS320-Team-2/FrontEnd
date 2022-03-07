@@ -1,5 +1,6 @@
 body {
   background-color: white;
+	  overflow: auto;
 }
 h1 {
 	margin: 100 px;
@@ -29,44 +30,46 @@ p {
 .progboxed {
   border: 1px solid black ;
 	background-color:  #005151;
-  width: 800px;
+  width: 70%;
   height: 40px;
 }
 .titlebox{
 /* 	border: 1px solid black ; */
 }
 .notstartboxed{
-	  width: 50%;
+	  width: 70%;
   height: 40px;
 	border: 1px solid black ;
 	background-color:  #005151;
+	
 }
 .completedboxed{
-	  width: 800px;
+	  width: 70%;
   height: 40px;
 		border: 1px solid black ;
 	background-color:  #005151;
 }
 .proglist{
 	background-color: #DEDEDE;
-  width: 800px;
+  width: 70%;
   height: 100px;
-  
-
+	  overflow: auto;
 }
 .completedlist{
 		background-color: #DEDEDE;
-  width: 800px;
+  width: 70%;
   height: 100px;
+	  overflow: auto;
 }
 .notstartlist{
 			background-color: #DEDEDE;
-  width: 800px;
+  width: 70%;
   height: 100px;
+	  overflow: auto;
 }
 
 .Tester{
 	background-color: pink;
-  width: 800px;
+  width: 70%;
   height: 100px;
 }
