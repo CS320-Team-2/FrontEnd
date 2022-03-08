@@ -16,6 +16,7 @@ h2{
   font-familiy: "Times New Roman", Times, serif;
 	color: white;
   margin-left: 10px;
+  margin-top: 5px;
   
   
 }
@@ -30,24 +31,34 @@ p {
 .progboxed {
   border: 1px solid black ;
 	background-color:  #005151;
-  width: 70%;
+  width: 69.89%;
   height: 40px;
 }
 .titlebox{
 /* 	border: 1px solid black ; */
+margin-left: 100px;
 }
 .notstartboxed{
-	  width: 70%;
+  width: 69.89%;
   height: 40px;
 	border: 1px solid black ;
 	background-color:  #005151;
 	
 }
 .completedboxed{
-	  width: 70%;
+	width: 69.89%;
   height: 40px;
 		border: 1px solid black ;
 	background-color:  #005151;
+}
+
+.ptoboxed{
+
+  width: 69.85%;
+  height: 40px;
+		border: 1px solid black ;
+	background-color:  #005151;
+  margin-left: 17%;
 }
 .proglist{
 	background-color: #DEDEDE;
@@ -68,8 +79,32 @@ p {
 	  overflow: auto;
 }
 
+.ptolist{
+  background-color: #DEDEDE;
+  width: 70%;
+  height: 400px;
+	  overflow: auto;
+
+    margin-left: 17%;
+
+}
+
 .Tester{
 	background-color: pink;
   width: 70%;
   height: 100px;
+}
+
+#asst{
+  margin-right:300px;
+}
+.BOX{
+  width: 70%;
+  height: 240px;
+  position:absolute;
+  left:35%;
+  top:20%;
+  margin: -100px 0 0 -100px;
+  border-radius: 50px;
+  border: black;
 }
