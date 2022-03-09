@@ -20,13 +20,21 @@ function Manager() {
       <p>DanielBarskiy</p>
       <p>32221178</p>
     </div>
+    
     <div id="popup1" class="overlay">
 	<div class="popup">
 		<h2><center>BOX</center></h2>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
-    <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"></input><br></br>
+        <label for="fname">Train to: </label>
+        <input type="text" id="lable1" name="mylable"></input><br></br>
+        <p></p>
+        <label for="fname">Link: </label>
+        <input type="text" id="lable2" name="lable2"></input><br></br>
+
+        <div className="button-container">
+            <input type="submit" value="Submit"/>
+          </div>
 		</div>
 	</div>
 </div>
@@ -34,7 +42,7 @@ function Manager() {
   </div>
 
     <div className="titlebox"><h1></h1></div>
-    <div className="ptoboxed"><h2> PTOO Requests:</h2></div>
+    <div className="ptoboxed"><h2> PTO Requests:</h2></div>
     <div className="ptolist"> </div>
   </div>
   

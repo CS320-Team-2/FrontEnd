@@ -107,4 +107,26 @@ margin-left: 100px;
   margin: -100px 0 0 -100px;
   border-radius: 50px;
   border: black;
+  
+}
+
+#lable1{
+  width: 50%;
+  margin-left: 23.19%;
+}
+#lable2{
+  width: 50%;
+  margin-left: 28.4%;
+
+}
+
+.popup{
+  opacity: 0.95;
+  margin-top: 15%;
+
+}
+
+
+.button-container{
+  margin-top: 5%;
 }
