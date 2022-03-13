@@ -1,0 +1,53 @@
+body {
+    background-color: white;
+    overflow: auto;
+}
+
+h1 {
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 27px;
+    margin-top: 100px;
+}
+
+h2 {
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.BigBox {
+    margin-top: 200px;
+    margin-left: 75%;
+    width: 23%;
+}
+
+.TitleBox {
+    margin-left: 50px;
+}
+
+.PEtitlebox {
+    border: 1.5px solid black;
+    background-color: #005151;
+    height: 40px;
+}
+
+.PTOtitlebox {
+    height: 40px;
+    border: 1.5px solid black;
+    background-color: #005151;
+}
+
+.PElist {
+    border: 1px solid #DEDEDE;
+    background-color: #DEDEDE;
+    height: 100px;
+}
+
+.PTOlist {
+    border: 1px solid #DEDEDE;
+    background-color: #DEDEDE;
+    height: 100px;
+}

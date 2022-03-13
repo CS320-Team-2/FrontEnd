@@ -1,132 +1,133 @@
 body {
-  background-color: white;
-	  overflow: auto;
+    background-color: white;
+    overflow: auto;
 }
+
 h1 {
-	margin: 100 px;
-  color: black;
-  margin-left: 10px;
-  font-familiy: "Times New Roman", Times, serif;
-  font-size: 30px;
-  margin-top: 100px;
-  
+    margin: 100 px;
+    color: black;
+    margin-left: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    margin-top: 100px;
 }
-h2{
-  font-size: 20px;
-  font-familiy: "Times New Roman", Times, serif;
-	color: white;
-  margin-left: 10px;
-  margin-top: 5px;
-  
-  
+
+h2 {
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    margin-left: 10px;
+    margin-top: 5px;
 }
+
 p {
-  color: red;
-/* 	background-color: pink; */
+    color: red;
+    /* 	background-color: pink; */
 }
-.Bigbox{
-  margin-top:20px;
+
+.Bigbox {
+    margin-top: 20px;
 }
 
 .progboxed {
-  border: 1px solid black ;
-	background-color:  #005151;
-  width: 69.89%;
-  height: 40px;
-}
-.titlebox{
-/* 	border: 1px solid black ; */
-margin-left: 100px;
-}
-.notstartboxed{
-  width: 69.89%;
-  height: 40px;
-	border: 1px solid black ;
-	background-color:  #005151;
-	
-}
-.completedboxed{
-	width: 69.89%;
-  height: 40px;
-		border: 1px solid black ;
-	background-color:  #005151;
+    border: 1px solid black;
+    background-color: #005151;
+    width: 69.89%;
+    height: 40px;
 }
 
-.ptoboxed{
-
-  width: 69.85%;
-  height: 40px;
-		border: 1px solid black ;
-	background-color:  #005151;
-  margin-left: 17%;
-}
-.proglist{
-	background-color: #DEDEDE;
-  width: 70%;
-  height: 100px;
-	  overflow: auto;
-}
-.completedlist{
-		background-color: #DEDEDE;
-  width: 70%;
-  height: 100px;
-	  overflow: auto;
-}
-.notstartlist{
-			background-color: #DEDEDE;
-  width: 70%;
-  height: 100px;
-	  overflow: auto;
+.titlebox {
+    /* 	border: 1px solid black ; */
+    margin-left: 100px;
 }
 
-.ptolist{
-  background-color: #DEDEDE;
-  width: 70%;
-  height: 400px;
-	  overflow: auto;
+.notstartboxed {
+    width: 69.89%;
+    height: 40px;
+    border: 1px solid black;
+    background-color: #005151;
+}
 
+.completedboxed {
+    width: 69.89%;
+    height: 40px;
+    border: 1px solid black;
+    background-color: #005151;
+}
+
+.ptoboxed {
+    width: 69.85%;
+    height: 40px;
+    border: 1px solid black;
+    background-color: #005151;
     margin-left: 17%;
-
 }
 
-.Tester{
-	background-color: pink;
-  width: 70%;
-  height: 100px;
+.proglist {
+    background-color: #DEDEDE;
+    width: 70%;
+    height: 100px;
+    overflow: auto;
 }
 
-#asst{
-  margin-right:300px;
-}
-.BOX{
-  width: 70%;
-  height: 240px;
-  position:absolute;
-  left:35%;
-  top:20%;
-  margin: -100px 0 0 -100px;
-  border-radius: 50px;
-  border: black;
-  
+.completedlist {
+    background-color: #DEDEDE;
+    width: 70%;
+    height: 100px;
+    overflow: auto;
 }
 
-#lable1{
-  width: 50%;
-  margin-left: 23.19%;
-}
-#lable2{
-  width: 50%;
-  margin-left: 28.4%;
-
+.notstartlist {
+    background-color: #DEDEDE;
+    width: 70%;
+    height: 100px;
+    overflow: auto;
 }
 
-.popup{
-  opacity: 0.95;
-  margin-top: 15%;
-
+.ptolist {
+    background-color: #DEDEDE;
+    width: 70%;
+    height: 400px;
+    overflow: auto;
+    margin-left: 17%;
 }
 
+.Tester {
+    background-color: pink;
+    width: 70%;
+    height: 100px;
+}
 
-.button-container{
-  margin-top: 5%;
+#asst {
+    margin-right: 300px;
+}
+
+.BOX {
+    width: 70%;
+    height: 240px;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+    margin: -100px 0 0 -100px;
+    border-radius: 50px;
+    border: black;
+}
+
+#lable1 {
+    width: 50%;
+    margin-left: 23.19%;
+}
+
+#lable2 {
+    width: 50%;
+    margin-left: 28.4%;
+}
+
+.popup {
+    opacity: 0.95;
+    margin-top: 15%;
+}
+
+.button-container {
+    margin-top: 5%;
 }
