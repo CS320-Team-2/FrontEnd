@@ -31,14 +31,15 @@ function Login() {
       event.preventDefault();
   
       var { username, Password } = document.forms[0];
-  
+      currentid = username.value;
+      
       const login_info = database.find((user) => user.username === username.value);
   
       if (login_info) {
         if (login_info.password !== Password.value) {
           error_login({ name: "Password", message: errors.Password });
         } else {
-          currentid = username.value;
+
           login_set_true(true);
         }
       } else {
@@ -72,6 +73,9 @@ function Login() {
       </div>
     );
   
+    function func(){
+      return navigate('/main', { state: { object: currentid}});
+    }
     return (
       
       <div className="app">
@@ -80,7 +84,7 @@ function Login() {
           <img className="logo"
             src={logo}
             alt='UKG Icon'></img>
-          {islogin ?  navigate('/main', { state: { object: currentid}}): renderForm}
+          {islogin ? navigate('/main', { state: { object: currentid}}) : renderForm}
         </div>
         <label id='copyright'>© 2022 UKG Inc. All rights reserved.</label>
       </div>

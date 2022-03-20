@@ -19,10 +19,10 @@ function Navbar() {
       <p>32221178</p>
     </div>
     <div id="popup1" class="overlay">
-	<div class="popup">
-		<h2>BOX</h2>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
+    	<div class="popup">
+		    <h2>BOX</h2>
+		    <a class="close" href="#">&times;</a>
+		    <div class="content">
     <label for="fname">First name:</label>
   <input type="text" id="fname" name="fname"></input><br></br>
 		</div>

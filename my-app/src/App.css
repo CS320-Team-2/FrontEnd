@@ -28,6 +28,8 @@ button:hover {
 
 .Navbar {
   background-color: #00D8D8;
+  box-shadow:1px 1px 5px #333;
+  border-width:1px 1px 1px 6px;
   position: absolute;
   top: 0;
   width: 100%;

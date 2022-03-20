@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from './ukg_logo.png';
 import "./App.css";
 import "./hpage.css";
 
 function Manager() {
+    const [isclickfromlist, click_set_true] = useState(false);
+
   return (
       <div className="Page">
   <div className="Navbar">
@@ -22,22 +24,36 @@ function Manager() {
     </div>
     
     <div id="popup1" class="overlay">
-	<div class="popup">
+	    <div class="popup">
 		<h2><center>BOX</center></h2>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
-        <label for="fname">Train to: </label>
-        <input type="text" id="lable1" name="mylable"></input><br></br>
-        <p></p>
-        <label for="fname">Link: </label>
-        <input type="text" id="lable2" name="lable2"></input><br></br>
+            <label for="fname">Train to: </label>
+            <input type="text" id="lable1" name="mylable"></input><br></br>
+            <p></p>
+            <label for="fname">Link: </label>
+            <input type="text" id="lable2" name="lable2"></input><br></br>
 
-        <div className="button-container">
+            <div className="button-container">
             <input type="submit" value="Submit"/>
-          </div>
-		</div>
+            </div>
+	    </div>
 	</div>
+    
 </div>
+
+    <div id="popup2" class="overlay">
+	    <div class="popup">
+		<h2><center>BOX</center></h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+            <div className="elist">
+                
+                </div>
+	    </div>
+	    </div>
+    
+    </div>
 
   </div>
 
