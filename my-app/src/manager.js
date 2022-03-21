@@ -56,10 +56,16 @@ function Manager() {
     </div>
 
   </div>
-
-    <div className="titlebox"><h1></h1></div>
+  <div className="CONT">
+    <div className="PTObox">
     <div className="ptoboxed"><h2> PTO Requests:</h2></div>
     <div className="ptolist"> </div>
+    </div>
+    <div className="ATbox">
+    <div className="astboxed"><h2> Assigned trainning:</h2></div>
+    <div className="asstlist"> </div>
+    </div>
+    </div>
   </div>
   
   );
