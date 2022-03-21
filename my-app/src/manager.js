@@ -17,17 +17,18 @@ function Manager() {
     <div className="middle">
     <a class="button" href="#popup1" id="asst"><center>Assign trainning</center></a>
     <a class="button" href="#popup2" id="list"><center>Employee List</center></a>
+    <a class="button" href="#popup3" id="review"><center>Write Review</center></a>
     </div>
     <div className="user">
       <p>DanielBarskiy</p>
       <p>32221178</p>
     </div>
     
-    <div id="popup1" class="overlay">
-	    <div class="popup">
-		<h2><center>BOX</center></h2>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
+      <div id="popup1" class="overlay">
+	     <div class="popup">
+	     <h2><center>BOX</center></h2>
+		   <a class="close" href="#">&times;</a>
+		    <div class="content">
             <label for="fname">Train to: </label>
             <input type="text" id="lable1" name="mylable"></input><br></br>
             <p></p>
@@ -37,25 +38,81 @@ function Manager() {
             <div className="button-container">
             <input type="submit" value="Submit"/>
             </div>
+	      </div>
 	    </div>
-	</div>
     
 </div>
 
-    <div id="popup2" class="overlay">
-	    <div class="popup">
-		<h2><center>BOX</center></h2>
-		<a class="close" href="#">&times;</a>
-		<div class="content">
+      <div id="popup2" class="overlay">
+	      <div class="popup">
+		    <h2><center>BOX</center></h2>
+		    <a class="close" href="#">&times;</a>
+		      <div class="content">
             <div className="elist">
                 
                 </div>
-	    </div>
-	    </div>
-    
-    </div>
+	          </div>
+	        </div>
+      </div>
 
+    <div id="popup3" class="overlay">
+    <div class="popup">
+    <h2><center>Performance Review</center></h2>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+        <label for="fname">Send To: </label>
+        <input type="text" id="lable1" name="mylable"></input><br></br>
+        <p></p>
+        <label for="fname">Growth Feedback: </label>
+        <ul class="likert">
+           <li> A lot </li>
+            <li><input type="radio" name="growth" value="1" /></li>
+             <li><input type="radio" name="growth" value="2" /></li>
+             <li><input type="radio" name="growth" value="3" /></li>
+             <li><input type="radio" name="growth" value="4" /></li>
+            <li><input type="radio" name="growth" value="5" /></li>
+         <li> None </li>
+      </ul><br></br>
+        <p></p>
+        <label for="fname">Kindness Feedback: </label>
+        <ul class="likert">
+           <li> Very </li>
+            <li><input type="radio" name="kind" value="1" /></li>
+             <li><input type="radio" name="kind" value="2" /></li>
+             <li><input type="radio" name="kind" value="3" /></li>
+             <li><input type="radio" name="kind" value="4" /></li>
+            <li><input type="radio" name="kind" value="5" /></li>
+         <li> None </li>
+      </ul><br></br>
+        <p></p>
+        <label for="fname">Delivery Feedback: </label>
+        <ul class="likert">
+           <li> Very Well </li>
+            <li><input type="radio" name="delivery" value="1" /></li>
+             <li><input type="radio" name="delivery" value="2" /></li>
+             <li><input type="radio" name="delivery" value="3" /></li>
+             <li><input type="radio" name="delivery" value="4" /></li>
+            <li><input type="radio" name="delivery" value="5" /></li>
+         <li> Needs Improvement </li>
+      </ul><br></br>
+        <p></p>
+        <label for="fname">Overall Feedback: </label>
+        <textarea id = "rev-desc" name="rev-desc" rows="5" cols= "47"></textarea>
+        <div className="button-container">
+            <input type="submit" value="Submit"/>
+          </div>
+    </div>
   </div>
+      </div>
+  </div>
+
+
+
+ 
+
+
+
+
   <div className="CONT">
     <div className="PTObox">
     <div className="ptoboxed"><h2> PTO Requests:</h2></div>
