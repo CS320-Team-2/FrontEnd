@@ -19,13 +19,18 @@ function Navbar() {
       <p>32221178</p>
     </div>
     <div id="popup1" class="overlay">
-    	<div class="popup">
-		    <h2>BOX</h2>
-		    <a class="close" href="#">&times;</a>
-		    <div class="content">
-    <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"></input><br></br>
-		</div>
+	<div class="popup">
+    <div class = "popup-header">
+      <h2>Request Performance Review</h2>
+    </div>
+    <div class = "popup-body">
+      <label for="fname">Request To: </label>
+      <input type="text" id="fname" name="fname"></input><br></br>
+    </div>
+    <div className = "submit-button">
+          <input type="submit-perf-rev" value="Submit"/>
+    </div>
+		<a class="close" href="#">&times;</a>
 	</div>
 </div>
 
