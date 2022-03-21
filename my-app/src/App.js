@@ -4,7 +4,6 @@ import Navbar from "./Navbar";
 import Main from "./main";
 import React from "react";
 import Manager from "./manager";
-import RS from "./requeststatus";
 import "./App.css";
 
 
@@ -18,7 +17,6 @@ function App(){
       <Route exact path='/' element={< Login />}></Route>
       <Route exact path='/main' element={< Main />}></Route>
       <Route exact path='/manager' element={< Manager />}></Route>
-      <Route exact path='/123' element={< RS />}></Route>
       </Routes>
       </BrowserRouter>
       

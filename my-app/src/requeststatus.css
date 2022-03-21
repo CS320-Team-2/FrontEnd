@@ -19,9 +19,11 @@ h2 {
 }
 
 .BigBox {
-    margin-top: 200px;
-    margin-left: 75%;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 74%;
     width: 23%;
+    top: 0
 }
 
 .TitleBox {
