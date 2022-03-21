@@ -8,6 +8,8 @@ import "./App.css";
 function Login() {
     const [errorMessages, error_login] = useState({});
     const [islogin, login_set_true] = useState(false);
+    const [username, setUserName] = useState();
+    const [password, setPassword] = useState();
     const navigate = useNavigate();
     //For test
     const database = [
@@ -20,7 +22,7 @@ function Login() {
         password: "4321"
       }
     ];
-     let currentid;
+     let currentid = 'aa';
   
     const errors = {
       username: "This user Id does not exit",
@@ -31,14 +33,15 @@ function Login() {
       event.preventDefault();
   
       var { username, Password } = document.forms[0];
-  
+      currentid = username.value;
+      
       const login_info = database.find((user) => user.username === username.value);
   
       if (login_info) {
         if (login_info.password !== Password.value) {
           error_login({ name: "Password", message: errors.Password });
         } else {
-          currentid = username.value;
+          currentid = login_info.username;
           login_set_true(true);
         }
       } else {
@@ -57,12 +60,12 @@ function Login() {
         <form onSubmit={login_handle}>
           <div className="input-container">
             <label>User Id </label>
-            <input type="text" name="username" required />
+            <input type="text" name="username" id="username" required onChange={e => setUserName(e.target.value)}/>
             {renderErrorMessage("username")}
           </div>
           <div className="input-container">
             <label>Password </label>
-            <input type="text" name="Password" required />
+            <input type="text" name="Password" required onChange={e => setPassword(e.target.value)}/>
             {renderErrorMessage("Password")}
           </div>
           <div className="button-container">
@@ -72,6 +75,7 @@ function Login() {
       </div>
     );
   
+
     return (
       
       <div className="app">
@@ -80,7 +84,9 @@ function Login() {
           <img className="logo"
             src={logo}
             alt='UKG Icon'></img>
-          {islogin ?  navigate('/main', { state: { object: currentid}}): renderForm}
+          
+          {islogin ? (navigate('/main', { state: { object: currentid}}),window.alert(currentid)) : renderForm}
+          
         </div>
         <label id='copyright'>© 2022 UKG Inc. All rights reserved.</label>
       </div>
