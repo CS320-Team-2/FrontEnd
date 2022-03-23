@@ -48,13 +48,14 @@ function Login() {
       const login_info = database.find((user) => user.username === username.value);
   
       if (login_info) {
+        setUserName(login_info.username);
         if (login_info.password !== Password.value) {
           error_login({ name: "Password", message: errors.Password });
-        } else if(login_info.id === 1) {
+        } else if(login_info.id == 1) {
           login_set_true(true);
           manager_set_true(true);
         }
-        else if(login_info.id === 2){
+        else if(login_info.id == 2){
           login_set_true(true);
           emp_set_true(true);
         }
