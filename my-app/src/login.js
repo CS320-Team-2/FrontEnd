@@ -8,6 +8,8 @@ import "./App.css";
 function Login() {
     const [errorMessages, error_login] = useState({});
     const [islogin, login_set_true] = useState(false);
+    const [ismanager, manager_set_true] = useState(false);
+    const [isemp, emp_set_true] = useState(false);
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     const navigate = useNavigate();
@@ -15,18 +17,26 @@ function Login() {
     const database = [
       {
         username: "1234",
-        password: "12345"
+        password: "12345",
+        id:"1"
       },
       {
         username: "4321",
-        password: "4321"
+        password: "4321",
+        id:"2"
+      },
+      {
+        username: "3",
+        password: "3",
+        id:"3"
       }
     ];
      let currentid = 'aa';
   
     const errors = {
       username: "This user Id does not exit",
-      Password: "invalid password"
+      Password: "invalid password",
+      ID:"Identification failed"
     };
   
     const login_handle = (event) => {
@@ -40,9 +50,16 @@ function Login() {
       if (login_info) {
         if (login_info.password !== Password.value) {
           error_login({ name: "Password", message: errors.Password });
-        } else {
-          currentid = login_info.username;
+        } else if(login_info.id === 1) {
           login_set_true(true);
+          manager_set_true(true);
+        }
+        else if(login_info.id === 2){
+          login_set_true(true);
+          emp_set_true(true);
+        }
+        else{
+          error_login({ name: "ID", message: errors.ID});
         }
       } else {
         error_login({ name: "username", message: errors.username });
@@ -66,7 +83,7 @@ function Login() {
           <div className="input-container">
             <label>Password </label>
             <input type="text" name="Password" required onChange={e => setPassword(e.target.value)}/>
-            {renderErrorMessage("Password")}
+            {renderErrorMessage("Password")}{renderErrorMessage("ID")}
           </div>
           <div className="button-container">
             <input type="submit" value="Login"/>
@@ -84,9 +101,20 @@ function Login() {
           <img className="logo"
             src={logo}
             alt='UKG Icon'></img>
-          
-          {islogin ? (navigate('/main', { state: { object: currentid}}),window.alert(currentid)) : renderForm}
-          
+          {(() => {
+        if (islogin) {
+         if(ismanager){
+          navigate('/manager', { state: { object: currentid}});
+         }
+         else if(isemp){
+          navigate('/main', { state: { object: currentid}});
+         }
+        } else {
+          return (
+            renderForm
+          )
+        }
+      })()}   
         </div>
         <label id='copyright'>© 2022 UKG Inc. All rights reserved.</label>
       </div>
