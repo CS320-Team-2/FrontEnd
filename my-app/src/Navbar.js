@@ -12,7 +12,8 @@ function Navbar() {
     </div>
     <div className="middle">
     <a class="button" href="#popup1"><center>Request Peer Eval</center></a>
-      <button>Request PTO</button>
+    <a class="button" href="#popup2"><center>Request PTO</center></a>
+      {/* <button>Request PTO</button> */}
     <a class="button" href="#popup3" id="review"><center>Write Review</center></a>
     </div>
     <div className="user">
@@ -21,6 +22,14 @@ function Navbar() {
     </div>
     <div id="popup1" class="overlay">
 	<div class="popup">
+  <h2><center>Peer Eval Request</center></h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+        <label for="fname">Manager Name: </label>
+        <input type="text" id="lable1" name="mylable"></input><br></br>
+        <p></p>
+        </div>
+
     <div class = "popup-header">
       <h2>Request Performance Review</h2>
     </div>
@@ -31,6 +40,36 @@ function Navbar() {
     <div className = "submit-button">
           <input type="submit-perf-rev" value="Submit"/>
     </div>
+		<a class="close" href="#">&times;</a>
+	</div>
+</div>
+
+
+<div id="popup2" class="overlay">
+	<div class="popup">
+  <h2><center>PTO Request</center></h2>
+		<a class="close" href="#">&times;</a>
+		<div class="content">
+        <label for="fname">Type: </label>
+        <input type="text" id="lable1" name="mylable"></input><br></br>
+        <p></p>
+        </div>
+
+    <div class = "popup-body">
+      <label for="sdate">Start Date: </label>
+      <input type="date" id="sdate" name="sdate"></input><br></br>
+    </div>
+    <div class = "popup-body">
+      <label for="edate">End Date: </label>
+      <input type="date" id="edate" name="edate"></input><br></br>
+    </div>
+    <div class = "popup-body">
+      <label for="comments">Additional Comments(Optional): </label>
+      <input type="text" id="comments" name="comments"></input><br></br>
+    </div>
+    <div className="button-container">
+            <input type="submit" value="Submit"/>
+          </div>
 		<a class="close" href="#">&times;</a>
 	</div>
 </div>
