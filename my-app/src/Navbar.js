@@ -10,11 +10,14 @@ function Navbar() {
         src={logo}
         alt='UKG Icon'></img>
     </div>
+
     <div className="middle">
     <a class="button" href="#popup1"><center>Request Peer Eval</center></a>
     <a class="button" href="#popup2"><center>Request PTO</center></a>
-      {/* <button>Request PTO</button> */}
     <a class="button" href="#popup3" id="review"><center>Write Review</center></a>
+    </div>
+    <div classname='TypeOfPage'>
+    <h3><center>EMPLOYEE ACCOUNT</center></h3>
     </div>
     <div className="user">
       <p>DanielBarskiy</p>

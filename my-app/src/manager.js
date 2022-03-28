@@ -15,9 +15,13 @@ function Manager() {
         alt='UKG Icon'></img>
     </div>
     <div className="middle">
-    <a class="button" href="#popup1" id="asst"><center>Assign trainning</center></a>
+    <a class="button" href="#popup1" id="asst"><center>Assign Training</center></a>
     <a class="button" href="#popup2" id="list"><center>Employee List</center></a>
     <a class="button" href="#popup3" id="review"><center>Write Review</center></a>
+    </div>
+
+    <div classname='TypeOfPage'>
+    <h3><center>MANAGER ACCOUNT</center></h3>
     </div>
     <div className="user">
       <p>DanielBarskiy</p>
@@ -119,7 +123,7 @@ function Manager() {
     <div className="ptolist"> </div>
     </div>
     <div className="ATbox">
-    <div className="astboxed"><h2> Assigned trainning:</h2></div>
+    <div className="astboxed"><h2> Assigned Training:</h2></div>
     <div className="asstlist"> </div>
     </div>
     </div>
