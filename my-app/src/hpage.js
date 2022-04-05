@@ -14,10 +14,12 @@ function Home() {
         <h2> In Progress Tasks:</h2>
       </div>
       <div className="proglist"> </div>
+      <p></p>
       <div className="notstartboxed">
         <h2> Not Started Tasks:</h2>
       </div>
       <div className='notstartlist'> </div>
+      <p></p>
       <div className="completedboxed">
         <h2> Completed Tasks:</h2>
       </div>
