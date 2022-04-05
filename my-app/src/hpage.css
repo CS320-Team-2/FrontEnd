@@ -6,19 +6,60 @@ h1 {
 	margin: 100 px;
   color: black;
   margin-left: 10px;
-  font-familiy: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 30px;
   margin-top: 100px;
   
 }
 h2{
   font-size: 20px;
-  font-familiy: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 	color: white;
   margin-left: 10px;
   margin-top: 5px;
+}
   
-  
+
+.PTO_component{
+border: 3px solid black;
+display: flex;
+}
+.PTO-TEXT{
+  flex: 1;
+}
+#PTO-APPROVE-button{
+margin-right: 1%;
+background-color: initial;
+background-image: linear-gradient(-180deg, #00D775, #00BD68);
+border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+height: 25px;
+line-height: 25px;
+outline: 0;
+overflow: hidden;
+padding: 0 20px;
+pointer-events: auto;
+position: relative;
+text-align: center;
+touch-action: manipulation;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: top;
+white-space: nowrap;
+width: 70%;
+z-index: 9;
+border: 0;
+}
+#PTO-APPROVE-button:hover{
+  background: #00bd68;
+}
+.PTO-BUTT{
+  margin-top: 15%;
+  margin-right: 0%;
 }
 p {
   color: red;
@@ -110,6 +151,44 @@ margin-left: 100px;
 	  overflow: auto;
 }
 
+
+
+
+
+
+
+
+#PTO-DENY-button {
+  margin-top: 1%;
+  background-color: initial;
+background-image: linear-gradient(-180deg, #d12c2c, #d60f0f);
+border-radius: 5px;
+box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+height: 25px;
+line-height: 25px;
+outline: 0;
+overflow: hidden;
+padding: 0 20px;
+pointer-events: auto;
+position: relative;
+text-align: center;
+touch-action: manipulation;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: top;
+white-space: nowrap;
+width: 70%;
+z-index: 9;
+border: 0;
+}
+
+#PTO-DENY-button:hover {
+  background: #9c0e0e;
+}
 
 .ptolist{
   background-color: #DEDEDE;
@@ -224,3 +303,4 @@ input[type="radio"]:checked:after {
   visibility: visible;
   border: 2px solid white;
 }
+

@@ -120,7 +120,21 @@ function Manager() {
   <div className="CONT">
     <div className="PTObox">
     <div className="ptoboxed"><h2> PTO Requests:</h2></div>
-    <div className="ptolist"> </div>
+    <div className="ptolist"> 
+      <div className="PTO_component">
+        <div className="PTO-TEXT">
+        <h2>name</h2>
+        <p>Started-End</p>
+        <p>Comment:huihuihuihiuhiuhihuhuigy</p>
+        <p>TYPE</p>
+        </div>
+        <div className="PTO-BUTT">
+        <button type="button" id="PTO-APPROVE-button">Approve</button>
+        <button type="button" id="PTO-DENY-button">Deny</button>
+        </div>
+      </div>
+      
+    </div>
     </div>
     <div className="ATbox">
     <div className="astboxed"><h2> Assigned Training:</h2></div>
