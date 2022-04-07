@@ -43,11 +43,41 @@ h2 {
 .PElist {
     border: 1px solid #DEDEDE;
     background-color: #DEDEDE;
-    height: 100px;
+    height: 170px;
 }
 
 .PTOlist {
     border: 1px solid #DEDEDE;
     background-color: #DEDEDE;
-    height: 100px;
+    height: 170px;
+}
+.PTOitem {
+    border: 1px solid #efeeee;
+    background-color: #efeeee;
+    height: 110px;
+    width: 610px;
+    margin-left: 10px;
+    overflow: scroll;
+}
+.PEitem{
+    border: 1px solid #efeeee;
+    background-color: #efeeee;
+    height: 110px;
+    width: 610px;
+    margin-left: 10px;
+    overflow: scroll;
+}
+.alignleft {
+	float: left;
+    color:black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin-left: 20px;
+}
+.alignright {
+	float: right;
+    color:black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin-right: 20px;
 }
