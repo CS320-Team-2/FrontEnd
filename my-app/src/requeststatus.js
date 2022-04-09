@@ -16,7 +16,86 @@ function RequestStatus() {
           <p class="alignleft">Request To</p>
           <p class="alignright">Status</p>
         </div>
-        <div className="PEitem"></div>
+        <div className="PEitem">
+          <div class="scroll-area-sm">
+            <perfect-scrollbar class="ps-show-limits">
+              <div style={{ position: "static" }} class="ps ps--active-y">
+                <div class="ps-content">
+                  <ul class=" list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="in-progress">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left">
+                              <div class="widget-heading">Sam Yot</div>
+                            </div>
+                            <div class="widget-content-right">In Progress</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left">
+                            <div class="widget-heading">John Doe</div>
+                          </div>
+                          <div class="widget-content-right">Denied</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left flex2">
+                            <div class="widget-heading">Sean Who</div>
+                          </div>
+                          <div class="widget-content-right">Denied</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="approve">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left">
+                              <div class="widget-heading">Samantha Due</div>
+                            </div>
+                            <div class="widget-content-right">Approved</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="approve">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left flex2">
+                              <div class="widget-heading">Johnny Smith</div>
+                            </div>
+                            <div class="widget-content-right">Approved</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="in-progress">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left flex2">
+                              <div class="widget-heading">Jane Doe</div>
+                            </div>
+                            <div class="widget-content-right">In Progress</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </perfect-scrollbar>
+          </div>
+        </div>
       </div>
       <div className="PTOtitlebox">
         <h2>Paid Time Off:</h2>
@@ -26,7 +105,84 @@ function RequestStatus() {
           <p class="alignleft">Request To</p>
           <p class="alignright">Status</p>
         </div>
-        <div className="PTOitem"></div>
+        <div className="PTOitem">
+          <div class="scroll-area-sm">
+            <perfect-scrollbar class="ps-show-limits">
+              <div style={{ position: "static" }} class="ps ps--active-y">
+                <div class="ps-content">
+                  <ul class=" list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="approve">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left">
+                              <div class="widget-heading">Sam Yot</div>
+                            </div>
+                            <div class="widget-content-right">Approved</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left">
+                            <div class="widget-heading">John Doe</div>
+                          </div>
+                          <div class="widget-content-right">Denied</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left flex2">
+                            <div class="widget-heading">Sean Who</div>
+                          </div>
+                          <div class="widget-content-right">Denied</div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="approve">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left">
+                              <div class="widget-heading">Samantha Due</div>
+                            </div>
+                            <div class="widget-content-right">Approved</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="approve">
+                        <div class="widget-content p-0">
+                          <div class="widget-content-wrapper">
+                            <div class="widget-content-left flex2">
+                              <div class="widget-heading">Johnny Smith</div>
+                            </div>
+                            <div class="widget-content-right">Approved</div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <div class="widget-content p-0">
+                        <div class="widget-content-wrapper">
+                          <div class="widget-content-left flex2">
+                            <div class="widget-heading">Jane Doe</div>
+                          </div>
+                          <div class="widget-content-right">Denied</div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </perfect-scrollbar>
+          </div>
+        </div>
       </div>
     </div>
   );
