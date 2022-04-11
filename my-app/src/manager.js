@@ -123,17 +123,43 @@ function Manager() {
     <div className="ptolist"> 
       <div className="PTO_component">
         <div className="PTO-TEXT">
-        <h2>name</h2>
-        <p>Started-End</p>
-        <p>Comment:huihuihuihiuhiuhihuhuigy</p>
-        <p>TYPE</p>
+        <p>Name : Moe Joe</p>
+        <p>From 10/15/2022 To 10/17/2022</p>
+        <p>Comment: Vacation with Family</p>
+        <p>Type : Personal</p>
+        <p>Date and Time Requested : At 09:04:00 AM on 10/13/2022</p>
         </div>
         <div className="PTO-BUTT">
         <button type="button" id="PTO-APPROVE-button">Approve</button>
         <button type="button" id="PTO-DENY-button">Deny</button>
         </div>
       </div>
-      
+      <div className="PTO_component">
+        <div className="PTO-TEXT">
+        <p>Name : Joe Doe</p>
+        <p>From 11/03/2022 To 11/10/2022</p>
+        <p>Comment: Medical leave</p>
+        <p>Type : Personal</p>
+        <p>Date and Time Requested : At 09:04:00 AM on 10/13/2022</p>
+        </div>
+        <div className="PTO-BUTT">
+        <button type="button" id="PTO-APPROVE-button">Approve</button>
+        <button type="button" id="PTO-DENY-button">Deny</button>
+        </div>
+      </div>
+      <div className="PTO_component">
+        <div className="PTO-TEXT">
+        <p>Name : Doe Moe</p>
+        <p>From 08/17/2022 To 10/05/2022</p>
+        <p>Comment: Business Trip</p>
+        <p>Type : Company</p>
+        <p>Date and Time Requested : At 10:04:00 PM on 04/13/2022</p>
+        </div>
+        <div className="PTO-BUTT">
+        <button type="button" id="PTO-APPROVE-button">Approve</button>
+        <button type="button" id="PTO-DENY-button">Deny</button>
+        </div>
+      </div>
     </div>
     </div>
     <div className="ATbox">
