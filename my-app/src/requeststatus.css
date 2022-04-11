@@ -43,11 +43,106 @@ h2 {
 .PElist {
     border: 1px solid #DEDEDE;
     background-color: #DEDEDE;
-    height: 100px;
+    height: 170px;
 }
 
 .PTOlist {
     border: 1px solid #DEDEDE;
     background-color: #DEDEDE;
-    height: 100px;
+    height: 170px;
+}
+.PTOitem {
+    border: 1px solid #efeeee;
+    background-color: #efeeee;
+    height: 110px;
+    width: 610px;
+    margin-left: 10px;
+    overflow: scroll;
+}
+.PEitem{
+    border: 1px solid #efeeee;
+    background-color: #efeeee;
+    height: 110px;
+    width: 610px;
+    margin-left: 10px;
+    overflow: scroll;
+}
+.alignleft {
+	float: left;
+    color:black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin-left: 30px;
+}
+.alignright {
+	float: right;
+    color:black;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 16px;
+    margin-right: 75px;
+}
+
+.scroll-area-sm {
+    height: 200px;
+    overflow-x: hidden
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: -1px;
+    background-color: #efeeee;
+    border: 1px solid rgba(0, 0, 0, 0.125)
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0
+}
+
+.widget-content {
+    padding: 1rem;
+    flex-direction: row;
+    align-items: center
+}
+
+.widget-content .widget-content-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center
+}
+
+.widget-content .widget-content-right {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: red;
+    height: 25px;
+    width: 90px;
+    border-radius: 10px;
+    padding: auto;
+    margin-left: auto
+}
+.approve .widget-content .widget-content-right{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(19, 197, 19);
+    height: 25px;
+    width: 90px;
+    border-radius: 10px;
+    padding: auto;
+    margin-left: auto
+}
+.in-progress .widget-content .widget-content-right{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(232, 243, 27);
+    height: 25px;
+    width: 90px;
+    border-radius: 10px;
+    padding: auto;
+    margin-left: auto
 }
