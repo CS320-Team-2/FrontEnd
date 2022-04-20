@@ -28,7 +28,8 @@ function Navbar() {
   {/* <a class ="button"><center></center></a> */}
   <div class="dropdown-content">
     <a href="#">32221178</a>
-    <a href="#">Logout</a>
+    <a href = 'http://localhost:3000/'> Logout </a>
+    {/* <a href="#">Logout</a> */}
     {/* <a href="#">Link 3</a> */}
   </div>
 </div>
