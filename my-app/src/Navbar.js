@@ -16,13 +16,27 @@ function Navbar() {
     <a class="button" href="#popup2"><center>Request PTO</center></a>
     <a class="button" href="#popup3" id="review"><center>Write Review</center></a>
     </div>
+
     <div classname='TypeOfPage'>
-    <h3><center>EMPLOYEE ACCOUNT</center></h3>
+    {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
+    <h3> EMPLOYEE ACCOUNT </h3>
+    
     </div>
-    <div className="user">
+
+  <div class="dropdown">
+  <a class="user-button">DanielBarskiy</a>
+  {/* <a class ="button"><center></center></a> */}
+  <div class="dropdown-content">
+    <a href="#">32221178</a>
+    <a href="#">Logout</a>
+    {/* <a href="#">Link 3</a> */}
+  </div>
+</div>
+
+    {/* <div className="user">
       <p>DanielBarskiy</p>
       <p>32221178</p>
-    </div>
+    </div> */}
     <div id="popup1" class="overlay">
 	<div class="popup">
   <h2><center>Peer Eval Request</center></h2>

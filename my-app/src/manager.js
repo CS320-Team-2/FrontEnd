@@ -23,10 +23,19 @@ function Manager() {
     <div classname='TypeOfPage'>
     <h3><center>MANAGER ACCOUNT</center></h3>
     </div>
-    <div className="user">
+    <div class="dropdown">
+  <a class="user-button">DanielBarskiy</a>
+  {/* <a class ="button"><center></center></a> */}
+  <div class="dropdown-content">
+    <a href="#">32221178</a>
+    <a href="#">Logout</a>
+    {/* <a href="#">Link 3</a> */}
+  </div>
+</div>
+    {/* <div className="user">
       <p>DanielBarskiy</p>
       <p>32221178</p>
-    </div>
+    </div> */}
     
       <div id="popup1" class="overlay">
 	     <div class="popup">
