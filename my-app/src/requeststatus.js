@@ -97,6 +97,7 @@ function RequestStatus() {
           </div>
         </div>
       </div>
+      <p></p>
       <div className="PTOtitlebox">
         <h2>Paid Time Off:</h2>
       </div>
