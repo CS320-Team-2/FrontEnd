@@ -4,11 +4,6 @@ import Main from "./main";
 import React from "react";
 import Manager from "./manager";
 import "./App.css";
-import ReactDOM from 'react-dom';
-
-import Form from './form';
-
-
 
 function App(){
   return (
