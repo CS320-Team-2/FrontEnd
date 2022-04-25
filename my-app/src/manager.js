@@ -3,6 +3,27 @@ import logo from './ukg_logo.png';
 import "./App.css";
 import "./hpage.css";
 
+// function PTOFetch(){
+
+
+  
+//   const [data, setData] = useState([]);
+//   useEffect(() => {
+//     fetchProduct();
+// }, []);
+// const fetchProduct = () => {
+//   fetch("https://jsonplaceholder.typicode.com/users")
+//   .then(response => {
+//     return response.json()
+//   })
+// .then((res) => {
+//         setData(res.data);
+//         console.log(res.data);
+// }
+// }
+// }
+
+
 function Manager() {
     // const [isclickfromlist, click_set_true] = useState(false);
     // this.displayData = [];
@@ -12,6 +33,7 @@ function Manager() {
     
 
   return (
+
       <div className="Page">
   <div className="Navbar">
     <div className="logoImage">
