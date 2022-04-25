@@ -4,12 +4,12 @@ import "./App.css";
 import "./hpage.css";
 
 function Manager() {
-    const [isclickfromlist, click_set_true] = useState(false);
-    this.displayData = [];
-    this.handleChange = this.handleChange.bind(this);
+    // const [isclickfromlist, click_set_true] = useState(false);
+    // this.displayData = [];
+    // this.handleChange = this.handleChange.bind(this);
 
 
-    this.displayData.push(a);
+    
 
   return (
       <div className="Page">

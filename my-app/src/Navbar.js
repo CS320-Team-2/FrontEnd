@@ -1,6 +1,19 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from './ukg_logo.png';
 import "./App.css";
+
+
+// function Example() {
+//      const [count, setCount] = useState(0);
+//     return (
+//       <div>
+//         {/* <p>You clicked {count} times</p> */}
+//         <button onClick={() => setCount(count + 1)}>
+//         {/* Click me */}
+//         </button>
+//     </div>
+//     );
+//   }
 
 function Navbar() {
   return (
@@ -20,10 +33,13 @@ function Navbar() {
     <div classname='TypeOfPage'>
     {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
     <h3> EMPLOYEE ACCOUNT </h3>
+    {/* <p><a href="#" onClick="Example;">Click Me</a></p> */}
+
     
     </div>
 
   <div class="dropdown">
+  {/* <div className= "user-button"> currentUser.name </div> */}
   <a class="user-button">DanielBarskiy</a>
   {/* <a class ="button"><center></center></a> */}
   <div class="dropdown-content">
