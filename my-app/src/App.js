@@ -6,7 +6,7 @@ import Manager from "./manager";
 import "./App.css";
 import ReactDOM from 'react-dom';
 
-import Form from './form';
+
 
 
 
