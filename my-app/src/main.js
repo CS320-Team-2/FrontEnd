@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Home from "./hpage";
 import RequestStatus from "./requeststatus";
+import ToDoList from "./todolist";
 import "./main.css";
 
 function Main() {
@@ -10,7 +11,7 @@ function Main() {
             <Navbar/>
             <div className="CONT"> 
                 <div className="todolist">
-                <Home/>
+                <ToDoList/>
                 </div>
                 <div className="reqstatus">
                 <RequestStatus/>
