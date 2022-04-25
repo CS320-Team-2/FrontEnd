@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "./Navbar";
-import Home from "./hpage";
 import RequestStatus from "./requeststatus";
 import ToDoList from "./todolist";
 import "./main.css";

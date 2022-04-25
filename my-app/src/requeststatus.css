@@ -88,7 +88,6 @@ h2 {
 }
 
 .list-group-item {
-    position: relative;
     display: block;
     padding: 0.75rem 1.25rem;
     margin-bottom: -1px;
@@ -112,7 +111,7 @@ h2 {
 .widget-content .widget-content-wrapper {
     display: flex;
     flex: 1;
-    position: relative;
+
     align-items: center
 }
 

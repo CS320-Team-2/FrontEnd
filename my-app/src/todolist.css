@@ -99,21 +99,18 @@ float: right;
 }
 
 .list-group-item-IP {
-  position: relative;
   display: block;
   height: 35px;
   background-color: #fff2cc;
   border: 1px solid rgba(0, 0, 0, 0.125)
 }
 .list-group-item-NS {
-  position: relative;
   display: block;
   height: 35px;
   background-color: #f4cccc;
   border: 1px solid rgba(0, 0, 0, 0.125)
 }
 .list-group-item-C {
-  position: relative;
   display: block;
   height: 35px;
   background-color: #d9ead3;

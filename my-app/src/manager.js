@@ -1,14 +1,16 @@
-import React,{useState} from "react";
+
+import React,{Component,Fragment} from 'react'
 import logo from './ukg_logo.png';
 import "./App.css";
 import "./hpage.css";
+import PTO from "./PTO";
 
-function Manager() {
+function Manager(){
     // const [isclickfromlist, click_set_true] = useState(false);
     // this.displayData = [];
     // this.handleChange = this.handleChange.bind(this);
-
-  return (
+   
+return (
       <div className="Page">
   <div className="Navbar">
     <div className="logoImage">
@@ -64,7 +66,7 @@ function Manager() {
 		    <a class="close" href="#">&times;</a>
 		      <div class="content">
             <div className="elist">
-                
+
                 </div>
 	          </div>
 	        </div>
@@ -129,12 +131,7 @@ function Manager() {
 
 
   <div className="CONT">
-    <div className="PTObox">
-    <div className="ptoboxed"><h2> PTO Requests:</h2></div>
-    <div className="ptolist"> 
-  
-    </div>
-    </div>
+    <PTO/>
       
     <div className="ATbox">
     <div className="astboxed"><h2> Assigned Training:</h2></div>
@@ -145,5 +142,6 @@ function Manager() {
   
   );
 }
+
 
 export default Manager;
