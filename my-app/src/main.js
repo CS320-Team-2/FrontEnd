@@ -6,8 +6,8 @@ import "./main.css";
 import { useLocation } from 'react-router-dom';
 
 function Main() {
-    let location = useLocation()
-    console.log(location.state)
+    let location = useLocation();
+    console.log(location.state);//state.id 
     return(
         <div>
             <Navbar/>
