@@ -3,8 +3,11 @@ import Navbar from "./Navbar";
 import RequestStatus from "./requeststatus";
 import ToDoList from "./todolist";
 import "./main.css";
+import { useLocation } from 'react-router-dom';
 
 function Main() {
+    let location = useLocation()
+    console.log(location.state)
     return(
         <div>
             <Navbar/>

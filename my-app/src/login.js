@@ -54,10 +54,12 @@ function Login() {
         } else if(login_info.id == 1) {
           login_set_true(true);
           manager_set_true(true);
+          setUserName(username.value);
         }
         else if(login_info.id == 2){
           login_set_true(true);
           emp_set_true(true);
+          setUserName(username.value);
         }
         else{
           error_login({ name: "ID", message: errors.ID});
@@ -105,10 +107,11 @@ function Login() {
           {(() => {
         if (islogin) {
          if(ismanager){
-          navigate('/manager', { state: { object: currentid}});
+           alert(username);
+          navigate('/manager', { state: { id: username}});
          }
          else if(isemp){
-          navigate('/main', { state: { object: currentid}});
+          navigate('/main', { state: { id: username}});
          }
         } else {
           return (

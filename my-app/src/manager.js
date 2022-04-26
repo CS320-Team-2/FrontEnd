@@ -1,4 +1,4 @@
-
+import { useLocation } from 'react-router-dom';
 import React,{Component,Fragment} from 'react'
 import logo from './ukg_logo.png';
 import "./App.css";
@@ -9,9 +9,11 @@ function Manager(){
     // const [isclickfromlist, click_set_true] = useState(false);
     // this.displayData = [];
     // this.handleChange = this.handleChange.bind(this);
-   
+    let location = useLocation()
+    console.log(location.state)
 return (
       <div className="Page">
+        
   <div className="Navbar">
     <div className="logoImage">
       <img className="logo"
