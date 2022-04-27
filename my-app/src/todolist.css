@@ -20,6 +20,7 @@ h2 {
 
 h3 {
   position: absolute;
+  top: 0px;
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(0, 0, 0);
@@ -29,11 +30,22 @@ h3 {
 
 h4 {
   position: absolute;
+  top: 0px;
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(0, 0, 0);
   margin-left: 300px;
   margin-top: 7px;
+}
+
+url {
+  position: absolute;
+  top: 0px;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(0, 0, 0);
+  margin-left: 345px;
+  margin-top: 6px;
 }
 
 .BigBox {
@@ -85,12 +97,14 @@ h4 {
   background-color: #efeeee;
   height: 125px;
 }
-.Citem{
+
+.Citem {
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
 }
-.NSitem{
+
+.NSitem {
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
@@ -98,10 +112,11 @@ h4 {
 
 .tododropdown-content {
   display: none;
-  position: relative;
+  position: absolute;
+  top: 25px;
   background-color: white;
-  width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  width: 98px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -112,39 +127,31 @@ h4 {
   display: block;
 }
 
-.tododropdown-content a:hover {background-color: rgb(197, 197, 197);}
-
-.tododropdown:hover .tododropdown-content {display: block;}
-
-.tododropdown:hover .tododropbtn {background-color: #30cebb;}
-
-.todouser-button{
-    font-size: 1em;
-    width: 10%;
-    padding: 10px;
-    color: rgb(255, 0, 0);
-    background-color: rgb(225, 225, 225);
-    border: 1px solid #ff0000;
-    /* text-decoration: none; */
-    white-space: normal;
-    word-wrap: break-word;
-    cursor: context-menu;
+.tododropdown-content a:hover {
+  background-color: rgb(197, 197, 197);
 }
 
-/* .alignleft {
-float: left;
-  color:black;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin-left: 30px;
+.tododropdown:hover .tododropdown-content {
+  display: block;
 }
-.alignright {
-float: right;
-  color:black;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin-right: 75px;
-} */
+
+.tododropdown:hover .tododropbtn {
+  background-color: #30cebb;
+}
+
+.todouser-button {
+  position: absolute;
+  top: 0px;
+  font-size: 17px;
+  width: 55px;
+  padding: 2px;
+  padding-left: 4px;
+  margin-left: 2px;
+  color: rgb(4, 0, 255);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ff0000;
+  cursor: context-menu;
+}
 
 .scroll-area-sm {
   height: 125px;
@@ -153,65 +160,24 @@ float: right;
 
 .list-group-item-IP {
   display: block;
+  position: relative;
   height: 35px;
   background-color: #fff2cc;
   border: 1px solid rgba(0, 0, 0, 0.125)
 }
+
 .list-group-item-NS {
   display: block;
+  position: relative;
   height: 35px;
   background-color: #f4cccc;
   border: 1px solid rgba(0, 0, 0, 0.125)
 }
+
 .list-group-item-C {
   display: block;
+  position: realtive;
   height: 35px;
   background-color: #d9ead3;
   border: 1px solid rgba(0, 0, 0, 0.125)
 }
-
-/* 
-
-.widget-content {
-  padding: 1rem;
-  flex-direction: row;
-  align-items: center
-}
-
-.widget-content .widget-content-wrapper {
-  display: flex;
-  flex: 1;
-  position: relative;
-  align-items: center
-}
-
-.widget-content .widget-content-right {
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: red;
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-}
-.approve .widget-content .widget-content-right{
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(19, 197, 19);
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-}
-.in-progress .widget-content .widget-content-right{
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(232, 243, 27);
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-} */
