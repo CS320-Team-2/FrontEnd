@@ -18,6 +18,24 @@ h2 {
   margin-top: 8px;
 }
 
+h3 {
+  position: absolute;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(0, 0, 0);
+  margin-left: 100px;
+  margin-top: 7px;
+}
+
+h4 {
+  position: absolute;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(0, 0, 0);
+  margin-left: 300px;
+  margin-top: 7px;
+}
+
 .BigBox {
   margin-top: 100px;
 }
