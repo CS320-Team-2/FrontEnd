@@ -32,18 +32,6 @@ h2 {
   height: 40px;
 }
 
-.alllist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
-  height: 125px;
-}
-
-.allitem {
-  border: 1px solid #efeeee;
-  background-color: #efeeee;
-  height: 125px;
-}
-
 .tododropdown-content {
   display: none;
   position: relative;
@@ -73,21 +61,6 @@ h2 {
     border: 1px solid #ff0000;
     white-space: normal;
 }
-
-/* .alignleft {
-float: left;
-  color:black;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin-left: 30px;
-}
-.alignright {
-float: right;
-  color:black;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin-right: 75px;
-} */
 
 .scroll-area-sm {
   height: 125px;
@@ -120,49 +93,3 @@ float: right;
   margin-left: 200px;
   margin-top: 8px;
 }
-
-/* 
-
-.widget-content {
-  padding: 1rem;
-  flex-direction: row;
-  align-items: center
-}
-
-.widget-content .widget-content-wrapper {
-  display: flex;
-  flex: 1;
-  position: relative;
-  align-items: center
-}
-
-.widget-content .widget-content-right {
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: red;
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-}
-.approve .widget-content .widget-content-right{
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(19, 197, 19);
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-}
-.in-progress .widget-content .widget-content-right{
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(232, 243, 27);
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-} */
