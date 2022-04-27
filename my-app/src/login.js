@@ -107,11 +107,10 @@ function Login() {
           {(() => {
         if (islogin) {
          if(ismanager){
-           alert(username);
-          navigate('/manager', { state: { id: username}});
+          navigate('/manager/'+username, { state: { id: username}});
          }
          else if(isemp){
-          navigate('/main', { state: { id: username}});
+          navigate('/main/'+username, { state: { id: username}});
          }
         } else {
           return (
