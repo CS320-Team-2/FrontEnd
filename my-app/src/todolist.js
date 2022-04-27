@@ -61,8 +61,8 @@ function ToDoList() {
                       <h3>Task: Training</h3>
                     </div>
                     <div classname='link'>
-                      <h4>URL: </h4>
-                      <url><a href='http//:google.com/training1'>http//:google.com/training1</a></url>
+                      <h4>Link: </h4>
+                      <url><a href='http://localhost:3000/main/4321/training1'>Training 1</a></url>
                     </div>
                     <div class="tododropdown">
                       <a class="todouser-button">Status</a>
