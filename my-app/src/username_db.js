@@ -21,12 +21,15 @@
 
 
 import React, { useState, useEffect } from 'react';
+
+var id=0;
+
 const App = () => {
 const [currentUser, setCurrentUser] = useState(null);
 const url = "https://api.adviceslip.com/advice";
 const url2 = "http://localhost:3000/employees/2";
 const fetchData = () => {
-    fetch(url2)
+    fetch(url)
       .then(response => {
         return response.json()
       })
@@ -36,7 +39,8 @@ const fetchData = () => {
         let obj = JSON.stringify(data);
         // const obj = JSON.parse(data).ToString();
         // console.log("************",obj);
-        setCurrentUser(obj)
+        setCurrentUser(data.slip.advice)
+        id = data.slip.id;
         // setCurrentUser()
         // setCurrentUser(obj.slip.advice);
       })
@@ -45,13 +49,19 @@ useEffect(() => {
     fetchData()
   }, [])
   return (
-    <div>
-        <p>User Name:</p>
-      <p>{currentUser}</p>
-    </div>
+    // <div>
+   <p> {currentUser}</p>
+        // {/* <p>User Name:</p> */}
+      // <p>{currentUser}</p>
+    // </div>
   );
 };
-export default App;
+
+export {App,id};
+// const id =,id 3;
+
+// export  {App,id};
+// export var obj;
 
 // import React, { useEffect, useState } from "react";
 // const App = () => {
