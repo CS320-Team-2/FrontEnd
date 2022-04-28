@@ -62,12 +62,13 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 20px;
 }
 
 .Navbar .middle button {
   height: 36px;
   font-size: 20px;
-  margin-left: 10px;
+  margin-left: 20px;
   margin-right: 10px;
   padding-left: 25px;
   padding-right: 25px;
@@ -186,7 +187,7 @@ input[type="submit-perf-rev"] {
   background: #30cebb;
   border: 1px solid #30cebb;
   border-radius: 6px;
-  color: rgb(0, 0, 0);
+  color: rgb(232, 22, 22);
   padding: 5px 5px;
   width: 45px;
 }
@@ -230,6 +231,7 @@ input[type="text"] {
   margin-top: 0;
   color: #333;
   font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
 }
 .popup .close {
   position: absolute;
