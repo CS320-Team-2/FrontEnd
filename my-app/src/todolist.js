@@ -50,9 +50,9 @@ function ToDoList() {
                     <div class="tododropdown">
                       <a class="todouser-button">Status</a>
                       <div class="tododropdown-content">
-                        <button onClick={toInProgress}>In-Progress</button>
-                        <button onClick={toNotStarted}>Not Started</button>
-                        <button onClick={tocomplete}>Completed.</button>
+                        <button type="button" class="IPbutton" onClick={toInProgress}>In-Progress</button>
+                        <button type="button" class="NSbutton" onClick={toNotStarted}>Not Started</button>
+                        <button type="button" class="Cbutton" onClick={tocomplete}>Completed</button>
                       </div>
                     </div>
                   </li>
@@ -67,9 +67,9 @@ function ToDoList() {
                     <div class="tododropdown">
                       <a class="todouser-button">Status</a>
                       <div class="tododropdown-content">
-                        <button onClick={toInProgress}>In-Progress</button>
-                        <button onClick={toNotStarted}>Not Started</button>
-                        <button onClick={tocomplete}>Completed.</button>
+                        <button type="button" class="IPbutton" onClick={toInProgress}>In-Progress</button>
+                        <button type="button" class="NSbutton" onClick={toNotStarted}>Not Started</button>
+                        <button type="button" class="Cbutton" onClick={tocomplete}>Completed</button>
                       </div>
                     </div>
                   </li>

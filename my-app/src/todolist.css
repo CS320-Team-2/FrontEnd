@@ -114,21 +114,10 @@ url {
   display: none;
   position: absolute;
   top: 25px;
-  background-color: white;
-  width: 98px;
+  background-color: rgb(140, 140, 140);
+  width: 90px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-}
-
-.tododropdown-content a {
-  color: black;
-  padding: 1px 1px;
-  text-decoration: none;
-  display: block;
-}
-
-.tododropdown-content a:hover {
-  background-color: rgb(197, 197, 197);
 }
 
 .tododropdown:hover .tododropdown-content {
@@ -142,15 +131,37 @@ url {
 .todouser-button {
   position: absolute;
   top: 0px;
+  font-family: "Times New Roman", Times, serif;
   font-size: 17px;
   width: 55px;
   padding: 2px;
-  padding-left: 4px;
+  padding-left: 6px;
   margin-left: 2px;
   color: rgb(4, 0, 255);
   background-color: rgb(255, 255, 255);
   border: 1px solid #ff0000;
   cursor: context-menu;
+}
+
+.IPbutton {
+  background-color: #fff2cc;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  width: 90px;
+}
+
+.NSbutton {
+  background-color: #f4cccc;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  width: 90px;
+}
+
+.Cbutton {
+  background-color: #d9ead3;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  width: 90px;
 }
 
 .scroll-area-sm {
