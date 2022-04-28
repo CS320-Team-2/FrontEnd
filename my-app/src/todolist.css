@@ -75,20 +75,20 @@ url {
 }
 
 .IPlist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
+  border: 1px solid #dedede;
+  background-color: #dedede;
   height: 125px;
 }
 
 .Clist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
+  border: 1px solid #dedede;
+  background-color: #dedede;
   height: 125px;
 }
 
 .NSlist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
+  border: 1px solid #dedede;
+  background-color: #dedede;
   height: 125px;
 }
 
@@ -166,7 +166,7 @@ url {
 
 .scroll-area-sm {
   height: 125px;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 .list-group-item-IP {
@@ -174,7 +174,7 @@ url {
   position: relative;
   height: 35px;
   background-color: #fff2cc;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .list-group-item-NS {
@@ -182,7 +182,7 @@ url {
   position: relative;
   height: 35px;
   background-color: #f4cccc;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .list-group-item-C {
@@ -190,5 +190,5 @@ url {
   position: realtive;
   height: 35px;
   background-color: #d9ead3;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
