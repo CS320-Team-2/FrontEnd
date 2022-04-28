@@ -223,12 +223,13 @@ input[type="text"] {
   width: 30%;
   position: relative;
   transition: all 5s ease-in-out;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .popup h2 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Times New Roman", Times, serif;
 }
 .popup .close {
   position: absolute;
@@ -291,7 +292,7 @@ input[type="text"] {
   position: relative;
   background-color: white;
   width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -302,21 +303,27 @@ input[type="text"] {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: rgb(197, 197, 197);}
+.dropdown-content a:hover {
+  background-color: rgb(197, 197, 197);
+}
 
-.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-.dropdown:hover .dropbtn {background-color: #30cebb;}
+.dropdown:hover .dropbtn {
+  background-color: #30cebb;
+}
 
-.user-button{
-    font-size: 1.3em;
-    width: 10%;
-    padding: 1px;
-    color: black;
-    background-color: #fff;
-    border: 1px solid #000000;
-    /* text-decoration: none; */
-    white-space: normal;
-    word-wrap: break-word;
-    cursor: context-menu;
+.user-button {
+  font-size: 1.3em;
+  width: 10%;
+  padding: 1px;
+  color: black;
+  background-color: #fff;
+  border: 1px solid #000000;
+  /* text-decoration: none; */
+  white-space: normal;
+  word-wrap: break-word;
+  cursor: context-menu;
 }
