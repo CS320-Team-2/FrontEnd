@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import logo from './ukg_logo.png';
 import "./App.css";
+// import { useState } from 'react';
+import {App,id} from "./username_db";
 
 function Navbar() {
   return (
+    
   <div className="Navbar">
     <div className="logoImage">
       <img className="logo"
@@ -19,15 +22,17 @@ function Navbar() {
 
     <div classname='TypeOfPage'>
     {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
+    {/* <h3>AHHHH </h3> */}
+   
     <h3> EMPLOYEE ACCOUNT </h3>
     
     </div>
-
+    
   <div class="dropdown">
-  <a class="user-button">DanielBarskiy</a>
+  <a class="user-button"> <App/></a>
   {/* <a class ="button"><center></center></a> */}
   <div class="dropdown-content">
-    <a href="#">32221178</a>
+    <a href="#"> {id} </a>
     <a href = 'http://localhost:3000/'> Logout </a>
     {/* <a href="#">Logout</a> */}
     {/* <a href="#">Link 3</a> */}
