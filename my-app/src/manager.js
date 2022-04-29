@@ -1,33 +1,66 @@
-import { useLocation } from "react-router-dom";
-import React, { Component, Fragment } from "react";
-import logo from "./ukg_logo.png";
+import { useLocation } from 'react-router-dom';
+import React,{Component,Fragment, useState} from 'react'
+import logo from './ukg_logo.png';
 import "./App.css";
+import "./elist.css";
 import "./hpage.css";
 import PTO from "./PTO";
+import Elist from './emp_list';
 
-function Manager() {
-  // const [isclickfromlist, click_set_true] = useState(false);
-  // this.displayData = [];
-  // this.handleChange = this.handleChange.bind(this);
-  let location = useLocation();
-  console.log(location.state);
-  return (
-    <div className="Page">
-      <div className="Navbar">
-        <div className="logoImage">
-          <img className="logo" src={logo} alt="UKG Icon"></img>
-        </div>
-        <div className="middle">
-          <a class="button" href="#popup1" id="asst">
-            <center>Assign Training</center>
-          </a>
-          <a class="button" href="#popup2" id="list">
-            <center>Employee List</center>
-          </a>
-          <a class="button" href="#popup3" id="review">
-            <center>Write Review</center>
-          </a>
-        </div>
+function Manager(){
+    // const [isclickfromlist, click_set_true] = useState(false);
+    // this.displayData = [];
+    // this.handleChange = this.handleChange.bind(this);
+
+    let web = document.location.href;
+    const te = web.split("/");
+    let manager = te[4];
+    let ab = manager.split("#")[0];
+    const[as_to, setas_to] = useState('');
+    const[as_url, setas_url] = useState('');
+    const[ATlist,setATlist] = useState([]);
+
+
+    const assign_handle = (event) => {
+      event.preventDefault();
+      //POST for ATlist
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+			method: 'POST',
+			body: JSON.stringify({
+				trainto: as_to,
+				trainurl: as_url,
+        manager_id :ab
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8"
+			}
+		}).then(response => {
+				return response.json()
+			}).then(data => {
+				let temp = [];
+        for (let i in data.ATlists) {
+         let dataTemp = [data.ATlists[i].manager_id,data.ATlists[i].trainto,data.ATlists[i].trainurl];
+         temp.push(dataTemp);
+            }
+            setATlist(temp);
+			});
+      console.log(as_to+as_url);
+    }
+
+return (
+      <div className="Page">
+        
+  <div className="Navbar">
+    <div className="logoImage">
+      <img className="logo"
+        src={logo}
+        alt='UKG Icon'></img>
+    </div>
+    <div className="middle">
+    <a class="button" href="#popup1" id="asst"><center>Assign Training</center></a>
+    <a class="button" href="#popup2" id="list"><center>Employee List</center></a>
+    <a class="button" href="#popup3" id="review"><center>Write Review</center></a>
+    </div>
 
         <div classname="TypeOfPage">
           <h3>
@@ -47,44 +80,41 @@ function Manager() {
       <p>DanielBarskiy</p>
       <p>32221178</p>
     </div> */}
+    
+      <div id="popup1" class="overlay">
+	     <div class="popup">
+	     <h2><center>BOX</center></h2>
+		   <a class="close" href="#">&times;</a>
+		    <div class="content">
+        <form onSubmit={assign_handle}>
+            <label for="fname">Train to: </label>
+            <input type="text" id="lable1" name="mylable" onChange={e => setas_to(e.target.value)}/><br></br>
+            <p></p>
+            <label for="fname">Link: </label>
+            <input type="text" id="lable2" name="lable2"  onChange={e => setas_url(e.target.value)}/><br></br>
 
-        <div id="popup1" class="overlay">
-          <div class="popup">
-            <h2>
-              <center>Assign Training</center>
-            </h2>
-            <a class="close" href="#">
-              &times;
-            </a>
-            <div class="content">
-              <label for="fname">Train to: </label>
-              <input type="text" id="lable1" name="mylable"></input>
-              <br></br>
-              <p></p>
-              <label for="fname">Link: </label>
-              <input type="text" id="lable2" name="lable2"></input>
-              <br></br>
-
-              <div className="button-container">
-                <input type="submit" value="Submit" />
-              </div>
+            <div className="button-container">
+            <input type="submit" value="Submit" />
             </div>
-          </div>
-        </div>
+            </form>
+	      </div>
+	    </div>
+    
+</div>
 
-        <div id="popup2" class="overlay">
-          <div class="popup">
-            <h2>
-              <center>Employee List </center>
-            </h2>
-            <a class="close" href="#">
-              &times;
-            </a>
-            <div class="content">
-              <div className="elist"></div>
-            </div>
-          </div>
-        </div>
+      <div id="popup2" class="overlay">
+	      <div class="popup">
+		    <h2><center>BOX</center></h2>
+		    <a class="close" href="#">&times;</a>
+		      <div class="content">
+            <div className="elist">
+            <ul class="list1 responsive green-checkmarks">
+            <Elist/>
+            </ul>
+                </div>
+	          </div>
+	        </div>
+      </div>
 
         <div id="popup3" class="overlay">
           <div class="popup">

@@ -110,7 +110,7 @@ function Login() {
           navigate('/manager/'+username, { state: { id: username}});
          }
          else if(isemp){
-          navigate('/main/'+username, { state: { id: username}});
+          navigate('/employee/'+username, { state: { id: username}});
          }
         } else {
           return (

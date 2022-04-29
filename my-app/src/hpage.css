@@ -30,32 +30,30 @@ h2 {
 }
 
 #PTO-APPROVE-button {
-  margin-right: 1%;
-  background-color: initial;
-  background-image: linear-gradient(-180deg, #00d775, #00bd68);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
-    sans-serif;
-  height: 25px;
-  line-height: 25px;
-  outline: 0;
-  overflow: hidden;
-  padding: 0 20px;
-  pointer-events: auto;
-  /* position: relative; */
-  text-align: center;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 70%;
-  z-index: 9;
-  border: 0;
+    margin-right: 1%;
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 25px;
+    line-height: 25px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 70%;
+    z-index: 9;
+    border: 0;
 }
 
 #PTO-APPROVE-button:hover {
@@ -168,32 +166,30 @@ p {
 }
 
 #PTO-DENY-button {
-  margin-top: 1%;
-  background-color: initial;
-  background-image: linear-gradient(-180deg, #d12c2c, #d60f0f);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial,
-    sans-serif;
-  height: 25px;
-  line-height: 25px;
-  outline: 0;
-  overflow: hidden;
-  padding: 0 20px;
-  pointer-events: auto;
-  /* position: relative; */
-  text-align: center;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 70%;
-  z-index: 9;
-  border: 0;
+    margin-top: 1%;
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #d12c2c, #d60f0f);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 25px;
+    line-height: 25px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 70%;
+    z-index: 9;
+    border: 0;
 }
 
 #PTO-DENY-button:hover {
@@ -252,12 +248,13 @@ p {
 }
 
 .elist {
-  width: 75%;
-  height: 400px;
-  border: 3px solid black;
-  border-radius: 10px;
-  background-color: white;
-  margin: auto;
+    width: 75%;
+    height: 400px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+    overflow: auto;
 }
 
 .popup {

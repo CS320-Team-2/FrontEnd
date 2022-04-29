@@ -11,7 +11,7 @@ function App(){
     <BrowserRouter>
       <Routes>
       <Route exact path='/' element={< Login />}></Route>
-      <Route exact path='/main/:id' element={< Main />}></Route>
+      <Route exact path='/employee/:id' element={< Main />}></Route>
       <Route exact path='/manager/:id' element={< Manager />}></Route>
       </Routes>
       </BrowserRouter>
