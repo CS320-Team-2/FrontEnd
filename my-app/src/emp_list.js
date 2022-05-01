@@ -4,7 +4,7 @@ import "./elist.css";
 function Elist(){
  const [elist,setelist] = useState([]);
  function handleget(){        
-    fetch('https://api.coinbase.com/v2/currencies')
+    fetch('localhost:3000/employees')
     .then(response => {
         
         if (response.ok) {
@@ -16,8 +16,8 @@ function Elist(){
       })
      .then(data =>{
          let temp = [];
-        for (let i in data.employeelist) {
-         let dataTemp = [data.employeelist[i].id];
+        for (let i in data.list) {
+         let dataTemp = [data.list[i].id];
          temp.push(dataTemp);
         
             }

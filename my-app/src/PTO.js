@@ -16,7 +16,7 @@ function PTO() {
       }, []);
     
     function handleget(){        
-        fetch('')//url
+        fetch(url)//
         .then(response => {
             
             if (response.ok) {
@@ -29,8 +29,8 @@ function PTO() {
           })
          .then(data =>{
              let temp = [];
-            for (let i in data.ptolist) {
-             let dataTemp = [data.ptolist[i].id,data.ptolist[i].emp_id,data.ptolist[i].type,data.ptolist[i].additional_info,data.ptolist[i].start_date,data.ptolist[i].end_date,data.ptolist[i].approved,data.ptolist[i].manager_id];
+            for (let i in data.list) {
+             let dataTemp = [data.list[i].id,data.list[i].emp_id,data.list[i].type,data.list[i].additional_info,data.list[i].start_date,data.list[i].end_date,data.list[i].approved,data.list[i].manager_id];
              //0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
              
                 
@@ -64,7 +64,7 @@ function PTO() {
                 start_date : myArray[4],
                 end_date: myArray[5],
                 approved: myArray[6],
-                manager_id: myArray[7]+1
+                manager_id: 1
 			}),
 			headers: {
 			  "Content-type": "application/json; charset=UTF-8"
@@ -74,11 +74,11 @@ function PTO() {
 		}).then(data => {
 
 			let temp = [];
-            for (let i in data.data) {
-             let dataTemp = [data.ptolist[i].id,data.ptolist[i].emp_id,data.ptolist[i].type,data.ptolist[i].additional_info,data.ptolist[i].start_date,data.ptolist[i].end_date,data.ptolist[i].approved,data.ptolist[i].manager_id];
+            for (let i in data.list) {
+             let dataTemp = [data.list[i].id,data.list[i].emp_id,data.list[i].type,data.list[i].additional_info,data.list[i].start_date,data.list[i].end_date,data.list[i].approved,data.list[i].manager_id];
              //0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
              
-             if(data.ptolist[i].approved === 0){
+             if(data.list[i].approved === 0){
                 temp.push(dataTemp);
             }
                 
@@ -107,7 +107,7 @@ function PTO() {
                 start_date : myArray[4],
                 end_date: myArray[5],
                 approved: myArray[6],
-                manager_id: myArray[7]+2
+                manager_id: 2
 			}),
 			headers: {
 			  "Content-type": "application/json; charset=UTF-8"
@@ -117,11 +117,11 @@ function PTO() {
 		}).then(data => {
 
 			let temp = [];
-            for (let i in data.data) {
-             let dataTemp = [data.ptolist[i].id,data.ptolist[i].emp_id,data.ptolist[i].type,data.ptolist[i].additional_info,data.ptolist[i].start_date,data.ptolist[i].end_date,data.ptolist[i].approved,data.ptolist[i].manager_id];
+            for (let i in data.list) {
+             let dataTemp = [data.list[i].id,data.list[i].emp_id,data.list[i].type,data.list[i].additional_info,data.list[i].start_date,data.ptolist[i].end_date,data.list[i].approved,data.list[i].manager_id];
              //0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
              
-             if(data.ptolist[i].approved === 0){
+             if(data.list[i].approved === 0){
                 temp.push(dataTemp);
             }
                 

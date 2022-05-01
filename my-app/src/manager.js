@@ -1,5 +1,4 @@
-import { useLocation } from 'react-router-dom';
-import React,{Component,Fragment, useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import logo from './ukg_logo.png';
 import "./App.css";
 import "./elist.css";
@@ -16,10 +15,41 @@ function Manager(){
     const te = web.split("/");
     let manager = te[4];
     let ab = manager.split("#")[0];
+  
     const[as_to, setas_to] = useState('');
     const[as_url, setas_url] = useState('');
     const[ATlist,setATlist] = useState([]);
+    
+    useEffect(() => {
+      // TODO: Call Database API to get database info
+      GetATbox();
 
+    }, []);
+
+    function GetATbox() {
+      let url = 'localhost:3000/assignedtraining/manager/'+ab;
+      fetch(url)//
+        .then(response => {
+            
+            if (response.ok) {
+              return response.json();
+              
+            } else {
+                console.log('doesn t fetch')
+              throw new Error('Something went wrong ...');
+            }
+          })
+         .then(data =>{
+             let temp = [];
+            for (let i in data.list) {
+                let dataTemp = [];
+                temp.push(dataTemp);
+                }
+                setATlist(temp);
+  
+            }
+          );
+    }
 
     const assign_handle = (event) => {
       event.preventDefault();
@@ -217,7 +247,19 @@ return (
           <div className="astboxed">
             <h2> Assigned Training:</h2>
           </div>
-          <div className="asstlist"> </div>
+          <div className="asstlist">
+          {
+                          ATlist.map((element,index)=>{
+                              
+                          return (
+                          <>
+                           <li></li>
+                                  </>);
+                              
+                          
+                          })
+                      }
+          </div>
         </div>
       </div>
     </div>
