@@ -36,7 +36,7 @@ function Manager(){
               
             } else {
                 console.log('doesn t fetch')
-              throw new Error('Something went wrong ...');
+                throw new Error('Something went wrong ...');
             }
           })
          .then(data =>{
