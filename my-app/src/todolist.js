@@ -1,28 +1,29 @@
-import React from "react";
+import React,{useState,useEffect,Component,Fragment} from 'react'
 import "./todolist.css";
 
 function tocomplete() {
-  this.className = this.className.replace(/(?:^|\s)NSitem(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)NSlist(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)IPitem(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)IPlist(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)list-group-item-IP(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)list-group-item-NS(?!\S)/g, '')
-  this.className += " list-group-item-C";
-  this.className += " Clist";
-  this.className += " Citem";
+  window.location.href = 'http://localhost:3000/employee/4321/complete'
+  // this.className = this.className.replace(/(?:^|\s)NSitem(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)NSlist(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)IPitem(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)IPlist(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)list-group-item-IP(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)list-group-item-NS(?!\S)/g, '')
+  // this.className += " list-group-item-C";
+  // this.className += " Clist";
+  // this.className += " Citem";
 }
 
 function toNotStarted() {
-  this.className = this.className.replace(/(?:^|\s)list-group-item-IP(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)list-group-item-C(?!\S)/g, '')
-  this.className += " list-group-item-NS";
+  // this.className = this.className.replace(/(?:^|\s)list-group-item-IP(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)list-group-item-C(?!\S)/g, '')
+  // this.className += " list-group-item-NS";
 }
 
 function toInProgress() {
-  this.className = this.className.replace(/(?:^|\s)list-group-item-C(?!\S)/g, '')
-  this.className = this.className.replace(/(?:^|\s)list-group-item-NS(?!\S)/g, '')
-  this.className += " list-group-item-IP";
+  // this.className = this.className.replace(/(?:^|\s)list-group-item-C(?!\S)/g, '')
+  // this.className = this.className.replace(/(?:^|\s)list-group-item-NS(?!\S)/g, '')
+  // this.className += " list-group-item-IP";
 }
 
 function ToDoList() {
@@ -42,7 +43,7 @@ function ToDoList() {
                 <div class="ps-content">
                   <li class="list-group-item-IP">
                     <div classname='TypeOfPage'>
-                      <h3>Task: Peer Eval</h3>
+                      <todoh3>Task: Peer Eval</todoh3>
                     </div>
                     <div classname='Requester'>
                       <h4>Requester: Sean Darras</h4>
@@ -58,11 +59,11 @@ function ToDoList() {
                   </li>
                   <li class="list-group-item-IP">
                     <div classname='TypeOfPage'>
-                      <h3>Task: Training</h3>
+                      <todoh3>Task: Training</todoh3>
                     </div>
                     <div classname='link'>
                       <h4>Link: </h4>
-                      <url><a href='http://localhost:3000/main/4321/training1'>Training 1</a></url>
+                      <url><a href='http://localhost:3000/employee/4321/training1'>Training 1</a></url>
                     </div>
                     <div class="tododropdown">
                       <a class="todouser-button">Status</a>
@@ -122,3 +123,36 @@ function ToDoList() {
 }
 
 export default ToDoList;
+
+//Peer Eval Request Template
+                    // <div classname='TypeOfPage'>
+                    //   <todoh3>Task: Peer Eval</todoh3>
+                    // </div>
+                    // <div classname='Requester'>
+                    //   <h4>Requester: Sean Darras</h4>
+                    // </div>
+                    // <div class="tododropdown">
+                    //   <a class="todouser-button">Status</a>
+                    //   <div class="tododropdown-content">
+                    //     <button type="button" class="IPbutton" onClick={toInProgress}>In-Progress</button>
+                    //     <button type="button" class="NSbutton" onClick={toNotStarted}>Not Started</button>
+                    //     <button type="button" class="Cbutton" onClick={tocomplete}>Completed</button>
+                    //   </div>
+                    // </div>
+
+//Training Template
+                    // <div classname='TypeOfPage'>
+                    //   <todoh3>Task: Training</todoh3>
+                    // </div>
+                    // <div classname='link'>
+                    //   <h4>Link: </h4>
+                    //   <url><a href='http://localhost:3000/main/4321/training1'>Training 1</a></url>
+                    // </div>
+                    // <div class="tododropdown">
+                    //   <a class="todouser-button">Status</a>
+                    //   <div class="tododropdown-content">
+                    //     <button type="button" class="IPbutton" onClick={toInProgress}>In-Progress</button>
+                    //     <button type="button" class="NSbutton" onClick={toNotStarted}>Not Started</button>
+                    //     <button type="button" class="Cbutton" onClick={tocomplete}>Completed</button>
+                    //   </div>
+                    // </div>
