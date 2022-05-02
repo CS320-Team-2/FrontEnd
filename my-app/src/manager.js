@@ -54,10 +54,11 @@ function Manager(){
     const assign_handle = (event) => {
       event.preventDefault();
       //POST for ATlist
+      const te = as_to.split("/");
       fetch('https://jsonplaceholder.typicode.com/posts', {
 			method: 'POST',
 			body: JSON.stringify({
-				trainto: as_to,
+				trainto: te,
 				trainurl: as_url,
         manager_id :ab
 			}),
