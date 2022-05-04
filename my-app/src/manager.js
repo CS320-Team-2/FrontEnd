@@ -18,7 +18,11 @@ function Manager(){
   
     const[as_to, setas_to] = useState('');
     const[as_url, setas_url] = useState('');
-    const[ATlist,setATlist] = useState([]);
+    const[ATlist,setATlist] = useState([['emp-id','url','2022-5-1-13-00','end_date',0],['emp-id2','url2','start_date2','end_date2',1],['emp-id','url','start_date','end_date',2]]);
+    const[start_date,set_start_date]= useState('');
+    const[end_date,set_end_date]= useState('');
+    const[id,set_id]=useState(0);
+   
     
     useEffect(() => {
       // TODO: Call Database API to get database info
@@ -42,7 +46,8 @@ function Manager(){
          .then(data =>{
              let temp = [];
             for (let i in data.list) {
-                let dataTemp = [];
+                let dataTemp = [data.list[i].emp_id,data.list[i].training_link,data.list[i].start_date,data.list[i].end_date,data.list[i].completed,];
+                set_id(i);
                 temp.push(dataTemp);
                 }
                 setATlist(temp);
@@ -58,9 +63,17 @@ function Manager(){
       fetch('https://jsonplaceholder.typicode.com/posts', {
 			method: 'POST',
 			body: JSON.stringify({
-				trainto: te,
-				trainurl: as_url,
-        manager_id :ab
+				emp_id: te,
+				attributes:{
+        training_link: as_url,
+        manager_id :ab,
+        completed:0,
+        start_date:start_date,
+        end_date : end_date,
+        id:id,
+        additional_info:''
+      }
+
 			}),
 			headers: {
 				"Content-type": "application/json; charset=UTF-8"
@@ -123,6 +136,13 @@ return (
             <p></p>
             <label for="fname">Link: </label>
             <input type="text" id="lable2" name="lable2"  onChange={e => setas_url(e.target.value)}/><br></br>
+            <p></p>
+            <label for="fname">Start date: </label>
+            <input type="text" id="lable3" name="lable3"  onChange={e => set_start_date(e.target.value)}/><br></br>
+            <p></p>
+            <label for="fname">End date: </label>
+            <input type="text" id="lable4" name="lable4"  onChange={e => set_end_date(e.target.value)}/><br></br>
+           
 
             <div className="button-container">
             <input type="submit" value="Submit" />
@@ -251,14 +271,66 @@ return (
           <div className="asstlist">
           {
                           ATlist.map((element,index)=>{
-                              
+                          //[0.emp_id,1.training_link,2.start_date,3.end_date,4.completed,];
+                          
+                          if(element[4] == 0){
                           return (
+
                           <>
-                           <li></li>
+                          <div className="ATlist_not_start">
+                              <p><h6>Sended to : <br/> 
+                              <div className='element'>{element[0]}</div></h6></p>
+                              <p></p><p></p>
+                             <p><h6>Train link : <br/> <div className='element'>{element[1]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Start date :  <br/><div className='element'>{element[2]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>End date : <br/> <div className='element'>{element[3]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Statue : <br/> <div className='element'>Not Started</div></h6></p>
+                           </div>
                                   </>);
+                          }
+                          else if(element[4] == 1){
+                            return (
+  
+                            <>
+                             <div className="ATlist_Progress">
+                             <p><h6>Sended to : <br/><div className='element'>{element[0]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Train link : <br/><div className='element'>{element[1]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Start date : <br/><div className='element'>{element[2]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>End date : <br/><div className='element'>{element[3]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Statue : <br/><div className='element'>In Progress</div></h6></p>
+                           </div>
+                                    </>);
+                            }
+                            else{
+                              return (
+    
+                              <>
+                               <div className="ATlist_finish">
+                              
+                               <p><h6>Sended to :  <br/><div className='element'>{element[0]}</div></h6></p>
+                               <p></p><p></p>
+                             <p><h6>Train link :  <br/><div className='element'>{element[1]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Start date : <br/><div className='element'> {element[2]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>End date :  <br/><div className='element'>{element[3]}</div></h6></p>
+                             <p></p><p></p>
+                             <p><h6>Statue : <br/> <div className='element'>Finished</div></h6></p>
+
+                             </div>
+                                      </>);
+                              }
                               
                           
                           })
+                          
                       }
           </div>
         </div>

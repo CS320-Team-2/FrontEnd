@@ -17,7 +17,7 @@ function Elist(){
      .then(data =>{
          let temp = [];
         for (let i in data.list) {
-         let dataTemp = [data.list[i].id];
+         let dataTemp = [data.list[i].id,data.list[i].first_name,data.list[i].last_name,data.list[i].email];
          temp.push(dataTemp);
         
             }
@@ -40,7 +40,8 @@ function Elist(){
                           return (
                           <>
                            <li>Employee id : {element[0]}</li>
-                                  </>);
+                                  
+                         </>);
                               
                           
                           })

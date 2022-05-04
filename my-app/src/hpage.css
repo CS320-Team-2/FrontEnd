@@ -12,12 +12,21 @@ h1 {
   margin-top: 100px;
 }
 
+h15{
+  font-family: 'Times New Roman', Times, serif;
+}
+
 h2 {
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
   color: white;
   margin-left: 10px;
   margin-top: 5px;
+}
+
+h6{
+font-size:medium;
+font-family: 'Times New Roman', Times, serif;
 }
 
 .PTO_component {
@@ -28,6 +37,35 @@ h2 {
 .PTO-TEXT {
   flex: 1;
 }
+
+.ATlist_Progress{
+    border: 1px solid black;
+    background-color: #edf6a8;
+    display: flex;
+    overflow: auto;
+}
+
+.ATlist_not_start{
+    border: 1px solid black;
+    background-color: #f19897;
+    display: flex;
+    overflow: auto;
+}
+
+.ATlist_finish{
+    border: 1px solid black;
+    background-color: #a6f4b8;
+    display: flex;
+    overflow: auto;
+}
+
+.element{
+  border:0.7px solid black;
+  border-radius: 3px;
+  box-shadow: 0 1.5px 3px 0 rgba(0, 0, 0, 0.2);
+
+}
+
 
 #PTO-APPROVE-button {
     margin-right: 1%;
@@ -245,6 +283,16 @@ p {
 #lable2 {
   width: 50%;
   margin-left: 28.4%;
+}
+
+#lable3{
+    width: 50%;
+    margin-left: 21.2%;
+}
+
+#lable4{
+    width: 50%;
+    margin-left: 22.2%;
 }
 
 .elist {

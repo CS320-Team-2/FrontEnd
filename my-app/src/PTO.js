@@ -3,6 +3,8 @@ import React,{useState,useEffect,Component,Fragment} from 'react'
 import "./App.css";
 import "./hpage.css";
 
+
+
 function PTO() {
     const [ptolist, setptolist] = useState([]);
     let web = document.location.href;
@@ -54,7 +56,7 @@ function PTO() {
         let id = myArray[0];
         
         console.log(id);
-        fetch('', {
+        fetch('localhost:3000/pto/', {
 			method: 'PUT',
 			body: JSON.stringify({
 				id: myArray[0],
@@ -64,7 +66,7 @@ function PTO() {
                 start_date : myArray[4],
                 end_date: myArray[5],
                 approved: myArray[6],
-                manager_id: 1
+                manager_id: ab
 			}),
 			headers: {
 			  "Content-type": "application/json; charset=UTF-8"
@@ -97,7 +99,7 @@ function PTO() {
         let id = myArray[0];
         
         console.log(id);
-        fetch('', {
+        fetch('localhost:3000/pto/', {
 			method: 'PUT',
 			body: JSON.stringify({
 				id: myArray[0],
@@ -141,13 +143,17 @@ return (<div className="PTObox">
 <div className="ptolist"> 
                     {
                         ptolist.map((element,index)=>{
-                            
+//0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
+
                         return (
                         <>
                           <div className="PTO_component">
         <div className="PTO-TEXT">
-        <p>{element[0]}</p>
-        <p>{element[1]}</p>
+        <p>From employee : {element[1]}</p>
+        <p>Type : {element[2]}</p>
+        <p>Start Date : {element[4]}</p>
+        <p>End Date : {element[5]}</p>
+        <p>Additional Info : {element[3]}</p>
         </div>
         <div className="PTO-BUTT">
         <button type="button" id="PTO-APPROVE-button" value={[element[0],element[1],element[2],element[3],element[4],element[5],element[6]]} onClick={clickhandle_approve}>Approve</button>
