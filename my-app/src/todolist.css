@@ -11,6 +11,8 @@ h1 {
 }
 
 h2 {
+  position: relative;
+  z-index: 1;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(211, 211, 211);
@@ -24,7 +26,7 @@ todoh3 {
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(0, 0, 0);
-  margin-left: 100px;
+  margin-left: 200px;
   margin-top: 7px;
 }
 
@@ -34,18 +36,18 @@ h4 {
   font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(0, 0, 0);
-  margin-left: 300px;
+  margin-left: 700px;
   margin-top: 7px;
 }
 
 url {
   position: absolute;
   top: 0px;
-  font-size: 15px;
+  font-size: 17px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(0, 0, 0);
-  margin-left: 345px;
-  margin-top: 6px;
+  margin-left: 745px;
+  margin-top: 4px;
 }
 
 .BigBox {
@@ -75,36 +77,48 @@ url {
 }
 
 .IPlist {
+  position: relative;
+  z-index: 1;
   border: 1px solid #dedede;
   background-color: #dedede;
   height: 125px;
 }
 
 .Clist {
+  position: relative;
+  z-index: 1;
   border: 1px solid #dedede;
   background-color: #dedede;
   height: 125px;
 }
 
 .NSlist {
+  position: relative;
+  z-index: 1;
   border: 1px solid #dedede;
   background-color: #dedede;
   height: 125px;
 }
 
 .IPitem {
+  position: relative;
+  z-index: 1;
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
 }
 
 .Citem {
+  position: relative;
+  z-index: 1;
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
 }
 
 .NSitem {
+  position: relative;
+  z-index: 1;
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
@@ -113,6 +127,7 @@ url {
 .tododropdown-content {
   display: none;
   position: absolute;
+  z-index: 9999;
   top: 25px;
   background-color: rgb(140, 140, 140);
   width: 90px;
@@ -122,14 +137,19 @@ url {
 
 .tododropdown:hover .tododropdown-content {
   display: block;
+  position: relative;
+  z-index: 9999;
 }
 
 .tododropdown:hover .tododropbtn {
   background-color: #30cebb;
+  position: relative;
+  z-index: 9000;
 }
 
 .todouser-button {
   position: absolute;
+  z-index: -1;
   top: 0px;
   font-family: "Times New Roman", Times, serif;
   font-size: 17px;
@@ -144,6 +164,8 @@ url {
 }
 
 .IPbutton {
+  position: relative;
+  z-index: 300;
   background-color: #fff2cc;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -151,6 +173,8 @@ url {
 }
 
 .NSbutton {
+  position: relative;
+  z-index: 300;
   background-color: #f4cccc;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -158,6 +182,8 @@ url {
 }
 
 .Cbutton {
+  position: relative;
+  z-index: 300;
   background-color: #d9ead3;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -170,27 +196,27 @@ url {
 }
 
 .list-group-item-IP {
-  z-index: 2;
   display: block;
   position: relative;
+  z-index: 1;
   height: 35px;
   background-color: #fff2cc;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .list-group-item-NS {
-  z-index: 2;
   display: block;
   position: relative;
+  z-index: 1;
   height: 35px;
   background-color: #f4cccc;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .list-group-item-C {
-  z-index: 2;
   display: block;
   position: relative;
+  z-index: 1;
   height: 35px;
   background-color: #d9ead3;
   border: 1px solid rgba(0, 0, 0, 0.125);
