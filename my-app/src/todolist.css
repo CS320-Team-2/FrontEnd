@@ -12,7 +12,6 @@ h1 {
 
 h2 {
   position: relative;
-  z-index: 1;
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
   color: rgb(211, 211, 211);
@@ -78,7 +77,6 @@ url {
 
 .IPlist {
   position: relative;
-  z-index: 1;
   border: 1px solid #dedede;
   background-color: #dedede;
   height: 125px;
@@ -86,7 +84,6 @@ url {
 
 .Clist {
   position: relative;
-  z-index: 1;
   border: 1px solid #dedede;
   background-color: #dedede;
   height: 125px;
@@ -94,7 +91,6 @@ url {
 
 .NSlist {
   position: relative;
-  z-index: 1;
   border: 1px solid #dedede;
   background-color: #dedede;
   height: 125px;
@@ -102,7 +98,6 @@ url {
 
 .IPitem {
   position: relative;
-  z-index: 1;
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
@@ -110,7 +105,6 @@ url {
 
 .Citem {
   position: relative;
-  z-index: 1;
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
@@ -118,38 +112,35 @@ url {
 
 .NSitem {
   position: relative;
-  z-index: 1;
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
 }
 
+.tododropdown {
+  position: absolute;
+}
+
 .tododropdown-content {
   display: none;
   position: absolute;
-  z-index: 9999;
   top: 25px;
   background-color: rgb(140, 140, 140);
   width: 90px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
 }
 
 .tododropdown:hover .tododropdown-content {
   display: block;
-  position: relative;
-  z-index: 9999;
 }
 
 .tododropdown:hover .tododropbtn {
   background-color: #30cebb;
   position: relative;
-  z-index: 9000;
 }
 
 .todouser-button {
   position: absolute;
-  z-index: -1;
   top: 0px;
   font-family: "Times New Roman", Times, serif;
   font-size: 17px;
@@ -165,7 +156,6 @@ url {
 
 .IPbutton {
   position: relative;
-  z-index: 300;
   background-color: #fff2cc;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -174,7 +164,6 @@ url {
 
 .NSbutton {
   position: relative;
-  z-index: 300;
   background-color: #f4cccc;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -183,7 +172,6 @@ url {
 
 .Cbutton {
   position: relative;
-  z-index: 300;
   background-color: #d9ead3;
   font-family: "Times New Roman", Times, serif;
   font-size: 15px;
@@ -198,7 +186,6 @@ url {
 .list-group-item-IP {
   display: block;
   position: relative;
-  z-index: 1;
   height: 35px;
   background-color: #fff2cc;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -207,7 +194,6 @@ url {
 .list-group-item-NS {
   display: block;
   position: relative;
-  z-index: 1;
   height: 35px;
   background-color: #f4cccc;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -216,7 +202,6 @@ url {
 .list-group-item-C {
   display: block;
   position: relative;
-  z-index: 1;
   height: 35px;
   background-color: #d9ead3;
   border: 1px solid rgba(0, 0, 0, 0.125);
