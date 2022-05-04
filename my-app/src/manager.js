@@ -7,9 +7,6 @@ import PTO from "./PTO";
 import Elist from './emp_list';
 
 function Manager(){
-    // const [isclickfromlist, click_set_true] = useState(false);
-    // this.displayData = [];
-    // this.handleChange = this.handleChange.bind(this);
 
     let web = document.location.href;
     const te = web.split("/");
@@ -32,7 +29,7 @@ function Manager(){
     }, []);
 
     function GetATbox() {
-      let url = 'localhost:3000/assignedtraining/manager/'+ab;
+      let url = 'http://localhost:3000/assignedtraining/manager/'+ab;
       fetch(url)//
         .then(response => {
             
