@@ -65,7 +65,7 @@ function PTO() {
 				additional_info:myArray[3],
                 start_date : myArray[4],
                 end_date: myArray[5],
-                approved: myArray[6],
+                approved: 1,
                 manager_id: ab
 			}),
 			headers: {
@@ -108,8 +108,8 @@ function PTO() {
 				additional_info:myArray[3],
                 start_date : myArray[4],
                 end_date: myArray[5],
-                approved: myArray[6],
-                manager_id: 2
+                approved: 2,
+                manager_id: ab
 			}),
 			headers: {
 			  "Content-type": "application/json; charset=UTF-8"
