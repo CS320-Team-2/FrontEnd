@@ -16,6 +16,18 @@ function Manager() {
   let manager = te[4];
   let ab = manager.split("#")[0];
 
+  // Manager Write Review
+  const[sendTo, setSendTo] = useState("");
+  const [writeRevList, setWriteRevList] = useState([
+    ["empID", "growthF", "kindF", "delivF", 0],
+    ["empID2", "growthF", "kindF", "delivF", 1]
+  ]);
+  const [growthFeed, setGrowthFeed] = useState("");
+  const [kindFeed, setKindFeed] = useState("");
+  const[delivFeed, setDelivFeed] = useState("");
+  const[empID, setEmpID] = useState(0);
+
+
   const [as_to, setas_to] = useState("");
   const [as_url, setas_url] = useState("");
   const [ATlist, setATlist] = useState([
@@ -30,6 +42,7 @@ function Manager() {
   useEffect(() => {
     // TODO: Call Database API to get database info
     GetATbox();
+    getWriteRev();
   }, []);
 
   function GetATbox() {
@@ -101,20 +114,6 @@ function Manager() {
   };
 
   // Manager Write Review:
-  const[sendTo, setSendTo] = useState("");
-  const [writeRevList, setWriteRevList] = useState([
-    ["empID", "growthF", "kindF", "delivF", 0],
-    ["empID2", "growthF", "kindF", "delivF", 1]
-  ]);
-  const [growthFeed, setGrowthFeed] = useState("");
-  const [kindFeed, setKindFeed] = useState("");
-  const[delivFeed, setDelivFeed] = useState("");
-  const[empID, setEmpID] = useState(0);
-
-  useEffect(() => {
-    getWriteRev();
-  }, []);
-
   function getWriteRev(){
     let url = "localhost:3000/writereview/manager/";
     fetch(url)
