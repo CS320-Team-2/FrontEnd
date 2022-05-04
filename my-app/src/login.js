@@ -16,7 +16,7 @@ function Login() {
     const navigate = useNavigate();
   
     const errors = {
-      username: "This user Id does not exit or",
+      username: "This user Id does not exit or invalid password",
      
     };
   
