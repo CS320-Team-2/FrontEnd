@@ -42,31 +42,37 @@ function Login() {
     const login_handle = (event) => {
       event.preventDefault();
   
-      var { username, Password } = document.forms[0];
-      currentid = username.value;
-      
-      const login_info = database.find((user) => user.username === username.value);
-  
-      if (login_info) {
-        setUserName(login_info.username);
-        if (login_info.password !== Password.value) {
-          error_login({ name: "Password", message: errors.Password });
-        } else if(login_info.id == 1) {
-          login_set_true(true);
-          manager_set_true(true);
-          setUserName(username.value);
+      fetch('', {
+        method: 'POST',
+        body: JSON.stringify({
+          username : username,
+          password : password
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
         }
-        else if(login_info.id == 2){
-          login_set_true(true);
-          emp_set_true(true);
-          setUserName(username.value);
-        }
-        else{
-          error_login({ name: "ID", message: errors.ID});
-        }
-      } else {
-        error_login({ name: "username", message: errors.username });
-      }
+      })
+        .then(response => {
+            
+            if (response.status == 200) {
+            let data = response.json();
+            if(data.list[0].isManager==0){
+              login_set_true(true);
+              emp_set_true(true);
+            }
+            if(data.list[0].isManager==1){
+              login_set_true(true);
+              manager_set_true(true);            }
+              
+            } else if(response.status == 500)  {
+              error_login({ name: "ID", message: errors.ID});
+            }
+            else{
+              console.log("fetch fail for Login");
+            }
+          });
+        
+        
     };
   
     const renderErrorMessage = (name) =>

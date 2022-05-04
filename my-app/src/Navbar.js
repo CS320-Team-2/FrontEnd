@@ -60,6 +60,8 @@ function Navbar() {
             <br></br>
             <p></p>
           </div>
+          
+          
 
           <div class="popup-header">
             <h2>
@@ -118,6 +120,8 @@ function Navbar() {
           </a>
         </div>
       </div>
+
+      
 
       <div id="popup3" class="overlay">
         <div class="popup">
