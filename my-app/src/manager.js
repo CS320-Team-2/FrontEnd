@@ -4,12 +4,24 @@ import "./App.css";
 import "./elist.css";
 import "./hpage.css";
 import PTO from "./PTO";
+import Elist from "./emp_list";
+
+// testing 
+
+function Manager() {
+  // const [isclickfromlist, click_set_true] = useState(false);
+  // this.displayData = [];
+  // this.handleChange = this.handleChange.bind(this);
+
+  let web = document.location.href;
+  const te = web.split("/");
+  let manager = te[4];
+  let ab = manager.split("#")[0];
+
 import Elist from './emp_list';
 
+
 function Manager(){
-    // const [isclickfromlist, click_set_true] = useState(false);
-    // this.displayData = [];
-    // this.handleChange = this.handleChange.bind(this);
 
     let web = document.location.href;
     const te = web.split("/");
@@ -18,7 +30,7 @@ function Manager(){
   
     const[as_to, setas_to] = useState('');
     const[as_url, setas_url] = useState('');
-    const[ATlist,setATlist] = useState([['emp-id','url','2022-5-1-13-00','end_date',0],['emp-id2','url2','start_date2','end_date2',1],['emp-id','url','start_date','end_date',2]]);
+    const[ATlist,setATlist] = useState([['emp-id','http://localhost:3000/manager/1234','2022-5-1-13-00','end_date',0],['emp-id2','url2','start_date2','end_date2',1],['emp-id','url','start_date','end_date',2]]);
     const[start_date,set_start_date]= useState('');
     const[end_date,set_end_date]= useState('');
     const[id,set_id]=useState(0);
@@ -26,12 +38,13 @@ function Manager(){
     
     useEffect(() => {
       // TODO: Call Database API to get database info
-      GetATbox();
+      //GetATbox();
+      console.log('getAT');
 
     }, []);
 
     function GetATbox() {
-      let url = 'localhost:3000/assignedtraining/manager/'+ab;
+      let url = 'http://localhost:3000/assignedtraining/manager/'+ab;
       fetch(url)//
         .then(response => {
             
@@ -58,6 +71,7 @@ function Manager(){
 
     const assign_handle = (event) => {
       event.preventDefault();
+      console.log('assign handle');
       //POST for ATlist
       const te = as_to.split("/");
       fetch('https://jsonplaceholder.typicode.com/posts', {
@@ -79,7 +93,10 @@ function Manager(){
 				"Content-type": "application/json; charset=UTF-8"
 			}
 		}).then(response => {
+      if(response.status == 200)
 				return response.json()
+        else console.log('fetch fail');
+        return response.json();
 			}).then(data => {
 				let temp = [];
         for (let i in data.ATlists) {

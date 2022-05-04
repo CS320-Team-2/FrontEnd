@@ -11,7 +11,7 @@ function PTO() {
     const te = web.split("/");
     let manager = te[4];
     let ab = manager.split("#")[0];
-    let url = 'localhost:3000/pto/'+ab;
+    let url = 'http://localhost:3000/pto/'+ab;
     useEffect(() => {
         // TODO: Call Database API to get database info
         handleget();
@@ -56,7 +56,7 @@ function PTO() {
         let id = myArray[0];
         
         console.log(id);
-        fetch('localhost:3000/pto/', {
+        fetch('http://localhost:3000/pto/', {
 			method: 'PUT',
 			body: JSON.stringify({
 				id: myArray[0],
@@ -99,7 +99,7 @@ function PTO() {
         let id = myArray[0];
         
         console.log(id);
-        fetch('localhost:3000/pto/', {
+        fetch('http://localhost:3000/pto/', {
 			method: 'PUT',
 			body: JSON.stringify({
 				id: myArray[0],

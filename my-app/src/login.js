@@ -16,7 +16,7 @@ function Login() {
     //For test
     const database = [
       {
-        username: "1234",
+        username: "1",
         password: "12345",
         id:"1"
       },
