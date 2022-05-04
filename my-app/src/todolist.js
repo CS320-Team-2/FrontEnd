@@ -29,9 +29,9 @@ function toInProgress() {
 function ToDoList() {
   return (
     <div className="BigBox">
-      <div className="TitleBox">
+      {/* <div className="TitleBox">
         <h1>To-Do List</h1>
-      </div>
+      </div> */}
       <div className="IPtitlebox">
         <h2>In-Progress Tasks:</h2>
       </div>
