@@ -4,7 +4,22 @@ import "./App.css";
 import "./elist.css";
 import "./hpage.css";
 import PTO from "./PTO";
+import Elist from "./emp_list";
+
+// testing 
+
+function Manager() {
+  // const [isclickfromlist, click_set_true] = useState(false);
+  // this.displayData = [];
+  // this.handleChange = this.handleChange.bind(this);
+
+  let web = document.location.href;
+  const te = web.split("/");
+  let manager = te[4];
+  let ab = manager.split("#")[0];
+
 import Elist from './emp_list';
+
 
 function Manager(){
 
