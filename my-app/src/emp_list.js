@@ -4,7 +4,7 @@ import "./elist.css";
 function Elist(){
  const [elist,setelist] = useState([]);
  function handleget(){        
-    fetch('localhost:3000/employees')
+    fetch('http://localhost:3000/employees')
     .then(response => {
         
         if (response.ok) {

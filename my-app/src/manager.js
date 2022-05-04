@@ -6,6 +6,7 @@ import "./hpage.css";
 import PTO from "./PTO";
 import Elist from "./emp_list";
 
+
 function Manager() {
   // const [isclickfromlist, click_set_true] = useState(false);
   // this.displayData = [];
@@ -15,6 +16,27 @@ function Manager() {
   const te = web.split("/");
   let manager = te[4];
   let ab = manager.split("#")[0];
+
+function Manager(){
+
+    let web = document.location.href;
+    const te = web.split("/");
+    let manager = te[4];
+    let ab = manager.split("#")[0];
+  
+    const[as_to, setas_to] = useState('');
+    const[as_url, setas_url] = useState('');
+    const[ATlist,setATlist] = useState([['emp-id','http://localhost:3000/manager/1234','2022-5-1-13-00','end_date',0],['emp-id2','url2','start_date2','end_date2',1],['emp-id','url','start_date','end_date',2]]);
+    const[start_date,set_start_date]= useState('');
+    const[end_date,set_end_date]= useState('');
+    const[id,set_id]=useState(0);
+   
+    
+    useEffect(() => {
+      // TODO: Call Database API to get database info
+      //GetATbox();
+      console.log('getAT');
+
 
   // Manager Write Review
   const[sendTo, setSendTo] = useState("");
@@ -26,6 +48,7 @@ function Manager() {
   const [kindFeed, setKindFeed] = useState("");
   const[delivFeed, setDelivFeed] = useState("");
   const[empID, setEmpID] = useState(0);
+
 
 
   const [as_to, setas_to] = useState("");
@@ -100,6 +123,64 @@ function Manager() {
       })
       .then((data) => {
         let temp = [];
+
+    function GetATbox() {
+      let url = 'http://localhost:3000/assignedtraining/manager/'+ab;
+      fetch(url)//
+        .then(response => {
+            
+            if (response.ok) {
+              return response.json();
+              
+            } else {
+                console.log('doesn t fetch')
+                throw new Error('Something went wrong ...');
+            }
+          })
+         .then(data =>{
+             let temp = [];
+            for (let i in data.list) {
+                let dataTemp = [data.list[i].emp_id,data.list[i].training_link,data.list[i].start_date,data.list[i].end_date,data.list[i].completed,];
+                set_id(i);
+                temp.push(dataTemp);
+                }
+                setATlist(temp);
+  
+            }
+          );
+    }
+
+    const assign_handle = (event) => {
+      event.preventDefault();
+      console.log('assign handle');
+      //POST for ATlist
+      const te = as_to.split("/");
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+			method: 'POST',
+			body: JSON.stringify({
+				emp_id: te,
+				attributes:{
+        training_link: as_url,
+        manager_id :ab,
+        completed:0,
+        start_date:start_date,
+        end_date : end_date,
+        id:id,
+        additional_info:''
+      }
+
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8"
+			}
+		}).then(response => {
+      if(response.status == 200)
+				return response.json()
+        else console.log('fetch fail');
+        return response.json();
+			}).then(data => {
+				let temp = [];
+
         for (let i in data.ATlists) {
           let dataTemp = [
             data.ATlists[i].manager_id,
