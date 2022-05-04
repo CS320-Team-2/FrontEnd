@@ -18,7 +18,7 @@ h2 {
   margin-top: 8px;
 }
 
-h3 {
+todoh3 {
   position: absolute;
   top: 0px;
   font-size: 17px;
@@ -170,6 +170,7 @@ url {
 }
 
 .list-group-item-IP {
+  z-index: 2;
   display: block;
   position: relative;
   height: 35px;
@@ -178,6 +179,7 @@ url {
 }
 
 .list-group-item-NS {
+  z-index: 2;
   display: block;
   position: relative;
   height: 35px;
@@ -186,8 +188,9 @@ url {
 }
 
 .list-group-item-C {
+  z-index: 2;
   display: block;
-  position: realtive;
+  position: relative;
   height: 35px;
   background-color: #d9ead3;
   border: 1px solid rgba(0, 0, 0, 0.125);

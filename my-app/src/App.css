@@ -219,6 +219,7 @@ input[type="text"] {
   color: #fff;
 }
 .popup {
+  z-index: 3;
   margin: 70px auto;
   padding: 20px;
   background: #fff;
@@ -230,6 +231,8 @@ input[type="text"] {
 }
 
 .popup h2 {
+  z-index: 3;
+  position: relative;
   margin-top: 0;
   color: #333;
   font-family: "Times New Roman", Times, serif;
@@ -249,10 +252,14 @@ input[type="text"] {
   color: #06d85f;
 }
 .popup .content {
+  position: relative;
+  z-index: 3;
   max-height: 30%;
   overflow: auto;
 }
 .popup-body {
+  z-index: 3;
+  position: relative;
   max-height: 30%;
   overflow: auto;
 }
@@ -277,6 +284,7 @@ input[type="text"] {
 }
 .overlay {
   position: fixed;
+  z-index: 3;
   top: 0;
   bottom: 0;
   left: 0;
