@@ -23,7 +23,7 @@ function Login() {
     const login_handle = (event) => {
       event.preventDefault();
   
-      fetch('', {
+      fetch('http://localhost:3000/login/user', {
         method: 'POST',
         body: JSON.stringify({
           username : username,
