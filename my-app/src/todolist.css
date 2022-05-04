@@ -13,9 +13,39 @@ h1 {
 h2 {
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
-  color: white;
+  color: rgb(211, 211, 211);
   margin-left: 10px;
   margin-top: 8px;
+}
+
+todoh3 {
+  position: absolute;
+  top: 0px;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(0, 0, 0);
+  margin-left: 100px;
+  margin-top: 7px;
+}
+
+h4 {
+  position: absolute;
+  top: 0px;
+  font-size: 17px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(0, 0, 0);
+  margin-left: 300px;
+  margin-top: 7px;
+}
+
+url {
+  position: absolute;
+  top: 0px;
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(0, 0, 0);
+  margin-left: 345px;
+  margin-top: 6px;
 }
 
 .BigBox {
@@ -45,20 +75,20 @@ h2 {
 }
 
 .IPlist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
+  border: 1px solid #dedede;
+  background-color: #dedede;
   height: 125px;
 }
 
 .Clist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
+  border: 1px solid #dedede;
+  background-color: #dedede;
   height: 125px;
 }
 
 .NSlist {
-  border: 1px solid #DEDEDE;
-  background-color: #DEDEDE;
+  border: 1px solid #dedede;
+  background-color: #dedede;
   height: 125px;
 }
 
@@ -67,98 +97,101 @@ h2 {
   background-color: #efeeee;
   height: 125px;
 }
-.Citem{
-  border: 1px solid #efeeee;
-  background-color: #efeeee;
-  height: 125px;
-}
-.NSitem{
+
+.Citem {
   border: 1px solid #efeeee;
   background-color: #efeeee;
   height: 125px;
 }
 
-/* .alignleft {
-float: left;
-  color:black;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin-left: 30px;
+.NSitem {
+  border: 1px solid #efeeee;
+  background-color: #efeeee;
+  height: 125px;
 }
-.alignright {
-float: right;
-  color:black;
+
+.tododropdown-content {
+  display: none;
+  position: absolute;
+  top: 25px;
+  background-color: rgb(140, 140, 140);
+  width: 90px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.tododropdown:hover .tododropdown-content {
+  display: block;
+}
+
+.tododropdown:hover .tododropbtn {
+  background-color: #30cebb;
+}
+
+.todouser-button {
+  position: absolute;
+  top: 0px;
   font-family: "Times New Roman", Times, serif;
-  font-size: 16px;
-  margin-right: 75px;
-} */
+  font-size: 17px;
+  width: 55px;
+  padding: 2px;
+  padding-left: 6px;
+  margin-left: 2px;
+  color: rgb(4, 0, 255);
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ff0000;
+  cursor: context-menu;
+}
+
+.IPbutton {
+  background-color: #fff2cc;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  width: 90px;
+}
+
+.NSbutton {
+  background-color: #f4cccc;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  width: 90px;
+}
+
+.Cbutton {
+  background-color: #d9ead3;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  width: 90px;
+}
 
 .scroll-area-sm {
   height: 125px;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 .list-group-item-IP {
+  z-index: 2;
   display: block;
+  position: relative;
   height: 35px;
   background-color: #fff2cc;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
+
 .list-group-item-NS {
+  z-index: 2;
   display: block;
+  position: relative;
   height: 35px;
   background-color: #f4cccc;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
+
 .list-group-item-C {
+  z-index: 2;
   display: block;
+  position: relative;
   height: 35px;
   background-color: #d9ead3;
-  border: 1px solid rgba(0, 0, 0, 0.125)
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
-
-/* 
-
-.widget-content {
-  padding: 1rem;
-  flex-direction: row;
-  align-items: center
-}
-
-.widget-content .widget-content-wrapper {
-  display: flex;
-  flex: 1;
-  position: relative;
-  align-items: center
-}
-
-.widget-content .widget-content-right {
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: red;
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-}
-.approve .widget-content .widget-content-right{
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(19, 197, 19);
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-}
-.in-progress .widget-content .widget-content-right{
-  text-align: center;
-  font-family: 'Times New Roman', Times, serif;
-  background-color: rgb(232, 243, 27);
-  height: 25px;
-  width: 90px;
-  border-radius: 10px;
-  padding: auto;
-  margin-left: auto
-} */
