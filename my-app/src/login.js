@@ -12,6 +12,7 @@ function Login() {
     const [isemp, emp_set_true] = useState(false);
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
+    const [id, setID] = useState();
     const navigate = useNavigate();
   
     const errors = {
@@ -37,14 +38,19 @@ function Login() {
             if (response.status == 200) {
             let data = response.json();
             if(data.list[0].isManager==0){
+              setID(data.list[0].emp_id);
               login_set_true(true);
               emp_set_true(true);
             }
             if(data.list[0].isManager==1){
+              setID(data.list[0].manager_id);
               login_set_true(true);
-              manager_set_true(true);            }
+              manager_set_true(true);            
+            }
+            
               
-            } else if(response.status == 500)  {
+            } 
+            else if(response.status == 500)  {
               error_login({ name: "ID", message: errors.username});
             }
             else{
@@ -93,10 +99,10 @@ function Login() {
           {(() => {
         if (islogin) {
          if(ismanager){
-          navigate('/manager/'+username, { state: { id: username}});
+          navigate('/manager/'+id, { state: { id: id}});
          }
          else if(isemp){
-          navigate('/employee/'+username, { state: { id: username}});
+          navigate('/employee/'+id, { state: { id: id}});
          }
         } else {
           return (
