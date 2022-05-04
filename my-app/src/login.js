@@ -13,30 +13,10 @@ function Login() {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
     const navigate = useNavigate();
-    //For test
-    const database = [
-      {
-        username: "1",
-        password: "12345",
-        id:"1"
-      },
-      {
-        username: "4321",
-        password: "4321",
-        id:"2"
-      },
-      {
-        username: "3",
-        password: "3",
-        id:"3"
-      }
-    ];
-     let currentid = 'Login Successful';
   
     const errors = {
-      username: "This user Id does not exit",
-      Password: "invalid password",
-      ID:"Identification failed"
+      username: "This user Id does not exit or",
+     
     };
   
     const login_handle = (event) => {
@@ -65,7 +45,7 @@ function Login() {
               manager_set_true(true);            }
               
             } else if(response.status == 500)  {
-              error_login({ name: "ID", message: errors.ID});
+              error_login({ name: "ID", message: errors.username});
             }
             else{
               console.log("fetch fail for Login");
