@@ -6,9 +6,17 @@ import "./hpage.css";
 import PTO from "./PTO";
 import Elist from './emp_list';
 import {App,App2} from "./username_db";
+import axios from 'axios'
 
 
 function Manager(){
+    const [performanceData, setperformanceData] = useState({from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
+    
+    async function handlePerformaceSubmit(){
+      console.log(performanceData);
+      const res = await axios.post('http://localhost:3000/performance/', performanceData)
+      console.log(res)
+    }
     let web = document.location.href;
     const te = web.split("/");
     let manager = te[4];
@@ -152,99 +160,100 @@ return (
             </div>
           </div>
       </div>
-        <div id="popup3" class="overlay">
-          <div class="popup">
-            <h2>
-              <center>Performance Review</center>
-            </h2>
-            <a class="close" href="#">
-              &times;
-            </a>
-            <div class="content">
-              <label for="fname">Send To: </label>
-              <input type="text" id="lable1" name="mylable"></input>
-              <br></br>
-              <p></p>
-              <label for="fname">Growth Feedback: </label>
-              <ul class="likert">
-                <li> A lot </li>
-                <li>
-                  <input type="radio" name="growth" value="1" />
-                </li>
-                <li>
-                  <input type="radio" name="growth" value="2" />
-                </li>
-                <li>
-                  <input type="radio" name="growth" value="3" />
-                </li>
-                <li>
-                  <input type="radio" name="growth" value="4" />
-                </li>
-                <li>
-                  <input type="radio" name="growth" value="5" />
-                </li>
-                <li> None </li>
-              </ul>
-              <br></br>
-              <p></p>
-              <label for="fname">Kindness Feedback: </label>
-              <ul class="likert">
-                <li> Very </li>
-                <li>
-                  <input type="radio" name="kind" value="1" />
-                </li>
-                <li>
-                  <input type="radio" name="kind" value="2" />
-                </li>
-                <li>
-                  <input type="radio" name="kind" value="3" />
-                </li>
-                <li>
-                  <input type="radio" name="kind" value="4" />
-                </li>
-                <li>
-                  <input type="radio" name="kind" value="5" />
-                </li>
-                <li> None </li>
-              </ul>
-              <br></br>
-              <p></p>
-              <label for="fname">Delivery Feedback: </label>
-              <ul class="likert">
-                <li> Very Well </li>
-                <li>
-                  <input type="radio" name="delivery" value="1" />
-                </li>
-                <li>
-                  <input type="radio" name="delivery" value="2" />
-                </li>
-                <li>
-                  <input type="radio" name="delivery" value="3" />
-                </li>
-                <li>
-                  <input type="radio" name="delivery" value="4" />
-                </li>
-                <li>
-                  <input type="radio" name="delivery" value="5" />
-                </li>
-                <li> Needs Improvement </li>
-              </ul>
-              <br></br>
-              <p></p>
-              <label for="fname">Overall Feedback: </label>
-              <textarea
-                id="rev-desc"
-                name="rev-desc"
-                rows="5"
-                cols="47"
-              ></textarea>
-              <div className="button-container">
-                <input type="submit" value="Submit" />
-              </div>
+      <div id="popup3" class="overlay">
+        <div class="popup">
+          <h2>
+            <center>Performance Review</center>
+          </h2>
+          <a class="close" href="#">
+            &times;
+          </a>
+          <div class="content">
+            <label for="fname">Send To: </label>
+            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setperformanceData({...performanceData, to_employee : e.target.value})}}></input>
+            <br></br>
+            <p></p>
+            <label for="fname">Growth Feedback: </label>
+            <ul class="likert">
+              <li> None </li>
+              <li>
+                <input type="radio" name="growth" value="1" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="2" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="3" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="4" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="5" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li> A lot </li>
+            </ul>
+            <br></br>
+            <p></p>
+            <label for="fname">Kindness Feedback: </label>
+            <ul class="likert">
+              <li> None </li>
+              <li>
+                <input type="radio" name="kind" value="1" onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="2"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="3"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="4"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="5"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li> Very </li>
+            </ul>
+            <br></br>
+            <p></p>
+            <label for="fname">Delivery Feedback: </label>
+            <ul class="likert">
+              <li> Needs Improvement </li>
+              <li>
+                <input type="radio" name="delivery" value="1"  onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="2" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="3" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="4" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="5" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li> Very Well </li>
+            </ul>
+            <br></br>
+            <p></p>
+            <label for="fname">Overall Feedback: </label>
+            <textarea
+              id="rev-desc"
+              name="rev-desc"
+              rows="5"
+              cols="47"
+              onChange={(e)=>{setperformanceData({...performanceData, comments : e.target.value})}}
+            ></textarea>
+            <div className="button-container">
+              <input type="submit" value="Submit" onClick={handlePerformaceSubmit}/>
             </div>
           </div>
         </div>
       </div>
+    </div>
       <div className="CONT">
         <PTO />
         <div className="ATbox">
