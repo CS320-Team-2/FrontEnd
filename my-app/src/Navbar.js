@@ -2,13 +2,7 @@ import React, { useState, useEffect } from "react";
 import logo from "./ukg_logo.png";
 import "./App.css";
 // import { useState } from 'react';
-<<<<<<< Updated upstream
-import { App, id } from "./username_db";
-
-// .
-=======
 import {App,App2} from "./username_db";
->>>>>>> Stashed changes
 function Navbar() {
   return (
     <div className="Navbar">
@@ -43,15 +37,12 @@ function Navbar() {
         </a>
         {/* <a class ="button"><center></center></a> */}
         <div class="dropdown-content">
-          <a href="#"> {id} </a>
+          
           <a href="http://localhost:3000/"> Logout </a>
           {/* <a href="#">Logout</a> */}
           {/* <a href="#">Link 3</a> */}
         </div>
       </div>
-<<<<<<< Updated upstream
-
-=======
     {/* <div classname='TypeOfPage'> */}
     {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
     {/* <h3>AHHHH </h3> */}
@@ -67,7 +58,6 @@ function Navbar() {
     {/* <a href="#">Link 3</a> */}
   </div>
 </div>
->>>>>>> Stashed changes
       {/* <div className="user">
       <p>DanielBarskiy</p>
       <p>32221178</p>
@@ -86,10 +76,6 @@ function Navbar() {
             <br></br>
             <p></p>
           </div>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
           <div class="popup-header">
             <h2>
               <center>Request Performance Review</center>
@@ -145,10 +131,6 @@ function Navbar() {
           </a>
         </div>
       </div>
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
       <div id="popup3" class="overlay">
         <div class="popup">
           <h2>

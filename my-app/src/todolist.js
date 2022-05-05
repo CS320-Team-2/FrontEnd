@@ -112,11 +112,12 @@ function ToDoList() {
 
                 {todolist.map((element,index)=>{
                 //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
-                  return(
+                if(element[4] == 1) { 
+                return(
                     <>
                   <li class="list-group-item-IP">
                     <div classname='TypeOfPage'>
-                      <todoh3>Train Link :{element[1]} | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
+                      <todoh3>Train Link :<a href={element[1]}>{element[1]}</a> | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
                     </div>
 
                     
@@ -131,7 +132,7 @@ function ToDoList() {
                   </li>
                   </>
                   )
-                  })}
+                }})}
 
 
                 </div>
@@ -152,12 +153,12 @@ function ToDoList() {
               
                   {todolist.map((element,index)=>{
                 //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
-                  if(element[4]==1){
+                  if(element[4]==0){
                   return(
                     <>
                   <li class="list-group-item-NS">
                     <div classname='TypeOfPage'>
-                      <todoh3>Train Link :{element[1]} | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
+                    <todoh3>Train Link :<a href={element[1]}>{element[1]}</a> | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
                     </div>
 
                     
@@ -191,12 +192,13 @@ function ToDoList() {
                 <div class="ps-content">
 
                   {todolist.map((element,index)=>{
+                    if(element[4]==2){
                 //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
                   return(
                     <>
                   <li class="list-group-item-C">
                     <div classname='TypeOfPage'>
-                      <todoh3>Train Link :{element[1]} | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
+                    <todoh3>Train Link :<a href={element[1]}>{element[1]}</a> | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
                     </div>
 
                     
@@ -211,7 +213,7 @@ function ToDoList() {
                   </li>
                   </>
                   )
-                  })}
+                  }})}
 
                 </div>
               </div>
