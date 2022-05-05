@@ -37,7 +37,7 @@ function Navbar() {
         <a class="button" href="#popup3" id="review">
           <center>Write Review</center>
         </a>
-        <a class="button" href="#popup4" id="inbox">
+        <a class="button" href="#popup5" id="inbox">
           <center>Inbox</center>
         </a>
       </div>
@@ -80,6 +80,20 @@ function Navbar() {
       <p>DanielBarskiy</p>
       <p>32221178</p>
     </div> */}
+                <div id="popup5" class="overlay">
+        <div class="popup">
+        <h2><center>BOX</center></h2>
+        <a class="close" href="#">&times;</a>
+          <div class="content">
+            <div className="elist">
+            <ul class="list1 responsive green-checkmarks">
+
+
+            </ul>
+                </div>
+            </div>
+          </div>
+      </div>
       <div id="popup1" class="overlay">
         <div class="popup">
           <h2>

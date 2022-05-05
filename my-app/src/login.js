@@ -40,7 +40,9 @@ function Login() {
             return response.json();
             
           } else {
+            renderErrorMessage();
             throw new Error('Something went wrong ...');
+  
           }
             
           }).then(data=>{

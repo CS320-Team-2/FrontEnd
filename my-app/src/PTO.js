@@ -85,12 +85,19 @@ return (<div className="PTObox">
                         <>
                           <div className="PTO_component">
         <div className="PTO-TEXT">
-        <p>From employee : {element[1]}</p>
-        <p>Type : {element[2]}</p>
-        <p>Start Date : {element[4]}</p>
-        <p>End Date : {element[5]}</p>
-        <p>Additional Info : {element[3]}</p>
-        <p>Statue : {element[6]}</p>
+
+        <p1>From employee : {element[1]}</p1>
+        <br/>
+        <p1>Type : {element[2]}</p1>
+        <br/>
+        <p1>Start Date : {element[4]}</p1>
+        <br/>
+        <p1>End Date : {element[5]}</p1>
+        <br/>
+        <p1>Additional Info : {element[3]}</p1>
+        <br/>
+        <p1>Statue : Undecided</p1>
+
         </div>
         <div className="PTO-BUTT">
         <button type="button" id="PTO-APPROVE-button" value={[element[0],element[1],element[2],element[3],element[4],element[5],element[6]]} onClick={clickhandle_approve}>Approve</button>
