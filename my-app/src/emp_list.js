@@ -3,8 +3,12 @@ import "./elist.css";
 
 function Elist(){
  const [elist,setelist] = useState([]);
+ let web = document.location.href;
+ const te = web.split("/");
+ let manager = te[4];
+ let ab = '2';//manager.split("#")[0];
  function handleget(){        
-    fetch('http://localhost:3000/employees')
+    fetch('http://localhost:3000/employees/'+ab)
     .then(response => {
         
         if (response.ok) {
@@ -39,7 +43,7 @@ function Elist(){
                               
                           return (
                           <>
-                           <li>Employee id : {element[0]}</li>
+                           <li>Employee id : {element[0]} | Full name: {element[1]} {element[2]}</li>
                                   
                          </>);
                               

@@ -26,7 +26,7 @@ function Login() {
       fetch('http://localhost:3000/login/user', {
         method: 'POST',
         body: JSON.stringify({
-          username : username,
+          email : username,
           password : password
         }),
         headers: {
@@ -34,9 +34,17 @@ function Login() {
         }
       })
         .then(response => {
+           
+          if (response.ok) {
+            console.log('go'); 
+            return response.json();
             
-            if (response.status == 200) {
-            let data = response.json();
+          } else {
+            throw new Error('Something went wrong ...');
+          }
+            
+          }).then(data=>{
+            console.log('love');
             if(data.list[0].isManager==0){
               setID(data.list[0].emp_id);
               login_set_true(true);
@@ -46,15 +54,6 @@ function Login() {
               setID(data.list[0].manager_id);
               login_set_true(true);
               manager_set_true(true);            
-            }
-            
-              
-            } 
-            else if(response.status == 500)  {
-              error_login({ name: "ID", message: errors.username});
-            }
-            else{
-              console.log("fetch fail for Login");
             }
           });
         
