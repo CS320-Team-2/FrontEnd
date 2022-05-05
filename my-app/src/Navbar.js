@@ -8,12 +8,20 @@ import {App,App2} from "./username_db";
 function Navbar() {
 
   const [formdataPTO, setformdataPTO] = useState({id: 6, emp_id: 1, manager_id: 1, type:"", start_date:"", end_date:"", additional_info:"", approved: 1});
+  const [performanceData, setperformanceData] = useState({id: 7, from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
   
   async function handleSubmit(){
     console.log(formdataPTO);
     const res = await axios.post('http://localhost:3000/pto/', formdataPTO)
     console.log(res)
   }
+
+  async function handlePerformaceSubmit(){
+    console.log(performanceData);
+    const res = await axios.post('http://localhost:3000/performance/', performanceData)
+    console.log(res)
+  }
+
   return (
     <div className="Navbar">
       <div className="logoImage">
@@ -151,72 +159,72 @@ function Navbar() {
           </a>
           <div class="content">
             <label for="fname">Send To: </label>
-            <input type="text" id="lable1" name="mylable"></input>
+            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setperformanceData({...performanceData, to_employee : e.target.value})}}></input>
             <br></br>
             <p></p>
             <label for="fname">Growth Feedback: </label>
             <ul class="likert">
-              <li> A lot </li>
-              <li>
-                <input type="radio" name="growth" value="1" />
-              </li>
-              <li>
-                <input type="radio" name="growth" value="2" />
-              </li>
-              <li>
-                <input type="radio" name="growth" value="3" />
-              </li>
-              <li>
-                <input type="radio" name="growth" value="4" />
-              </li>
-              <li>
-                <input type="radio" name="growth" value="5" />
-              </li>
               <li> None </li>
+              <li>
+                <input type="radio" name="growth" value="1" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="2" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="3" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="4" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="growth" value="5" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+              </li>
+              <li> A lot </li>
             </ul>
             <br></br>
             <p></p>
             <label for="fname">Kindness Feedback: </label>
             <ul class="likert">
-              <li> Very </li>
-              <li>
-                <input type="radio" name="kind" value="1" />
-              </li>
-              <li>
-                <input type="radio" name="kind" value="2" />
-              </li>
-              <li>
-                <input type="radio" name="kind" value="3" />
-              </li>
-              <li>
-                <input type="radio" name="kind" value="4" />
-              </li>
-              <li>
-                <input type="radio" name="kind" value="5" />
-              </li>
               <li> None </li>
+              <li>
+                <input type="radio" name="kind" value="1" onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="2"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="3"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="4"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="kind" value="5"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+              </li>
+              <li> Very </li>
             </ul>
             <br></br>
             <p></p>
             <label for="fname">Delivery Feedback: </label>
             <ul class="likert">
-              <li> Very Well </li>
-              <li>
-                <input type="radio" name="delivery" value="1" />
-              </li>
-              <li>
-                <input type="radio" name="delivery" value="2" />
-              </li>
-              <li>
-                <input type="radio" name="delivery" value="3" />
-              </li>
-              <li>
-                <input type="radio" name="delivery" value="4" />
-              </li>
-              <li>
-                <input type="radio" name="delivery" value="5" />
-              </li>
               <li> Needs Improvement </li>
+              <li>
+                <input type="radio" name="delivery" value="1"  onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="2" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="3" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="4" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li>
+                <input type="radio" name="delivery" value="5" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+              </li>
+              <li> Very Well </li>
             </ul>
             <br></br>
             <p></p>
@@ -226,9 +234,10 @@ function Navbar() {
               name="rev-desc"
               rows="5"
               cols="47"
+              onChange={(e)=>{setperformanceData({...performanceData, comments : e.target.value})}}
             ></textarea>
             <div className="button-container">
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Submit" onClick={handlePerformaceSubmit}/>
             </div>
           </div>
         </div>
