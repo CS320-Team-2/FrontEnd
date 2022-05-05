@@ -7,8 +7,8 @@ import {App,App2} from "./username_db";
 
 function Navbar() {
 
-  const [formdataPTO, setformdataPTO] = useState({id: 6, emp_id: 1, manager_id: 1, type:"", start_date:"", end_date:"", additional_info:"", approved: 1});
-  const [performanceData, setperformanceData] = useState({id: 7, from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
+  const [formdataPTO, setformdataPTO] = useState({emp_id: 1, manager_id: 1, type:"", start_date:"", end_date:"", additional_info:"", approved: 0});
+  const [performanceData, setperformanceData] = useState({from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
   
   async function handleSubmit(){
     console.log(formdataPTO);
