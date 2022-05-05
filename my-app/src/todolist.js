@@ -1,32 +1,100 @@
+
 import React,{useState,useEffect,Component,Fragment} from 'react'
 import "./todolist.css";
 
-function tocomplete() {
-  window.location.href = 'http://localhost:3000/employee/4321/complete'
-  // this.className = this.className.replace(/(?:^|\s)NSitem(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)NSlist(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)IPitem(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)IPlist(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)list-group-item-IP(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)list-group-item-NS(?!\S)/g, '')
-  // this.className += " list-group-item-C";
-  // this.className += " Clist";
-  // this.className += " Citem";
-}
 
-function toNotStarted() {
-  // this.className = this.className.replace(/(?:^|\s)list-group-item-IP(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)list-group-item-C(?!\S)/g, '')
-  // this.className += " list-group-item-NS";
-}
 
-function toInProgress() {
-  // this.className = this.className.replace(/(?:^|\s)list-group-item-C(?!\S)/g, '')
-  // this.className = this.className.replace(/(?:^|\s)list-group-item-NS(?!\S)/g, '')
-  // this.className += " list-group-item-IP";
-}
+
+
+
+
 
 function ToDoList() {
+  const [todolist,settodolist] = useState([]);
+  let web = document.location.href;
+  const te = web.split("/");
+  let manager = te[4];
+  let ab = manager.split("#")[0];
+  let num_id = parseInt(ab);
+    
+  useEffect(() => {
+    // TODO: Call Database API to get database info
+    getTODO();
+  }, []);
+  
+  
+  function getTODO(){
+    let url = 'http://localhost:3000/assignedtraining/'+ab;
+    console.log('it runs');
+    fetch(url)//
+      .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
+              console.log('doesn t fetch')
+              throw new Error('Something went wrong ...');
+          }
+        })
+       .then(data =>{
+           let temp = [];
+          for (let i in data.list) {
+              let dataTemp = [data.list[i].id,data.list[i].training_link,data.list[i].start_date,data.list[i].end_date,data.list[i].completed,data.list[i].manager_id];
+              //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
+              temp.push(dataTemp);
+              }
+              settodolist(temp);
+          }
+        );
+  }
+
+  function tocomplete(e) {
+    let id = e.target.value;
+    fetch(' http://localhost:3000/assignedtraining/', {
+      method: 'PUT',
+      body: JSON.stringify({
+        id: id,
+        completed: 2
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    }).then(response => {
+      getTODO();
+    })
+  }
+
+  function toInProgress(e) {
+    let id = e.target.value;
+    fetch(' http://localhost:3000/assignedtraining/', {
+      method: 'PUT',
+      body: JSON.stringify({
+        id: id,
+        completed: 1
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    }).then(response => {
+      getTODO();
+    })
+  }
+  
+  function toNotStarted(e) {
+    let id = e.target.value;
+    fetch(' http://localhost:3000/assignedtraining/', {
+      method: 'PUT',
+      body: JSON.stringify({
+        id: id,
+        completed: 0
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    }).then(response => {
+      getTODO();
+    })
+  }
+
   return (
     <div className="BigBox">
       {/* <div className="TitleBox">
@@ -41,39 +109,31 @@ function ToDoList() {
             <perfect-scrollbar class="ps-show-limits">
               <div style={{ position: "static" }} class="ps ps--active-y">
                 <div class="ps-content">
+
+                {todolist.map((element,index)=>{
+                //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
+                  return(
+                    <>
                   <li class="list-group-item-IP">
                     <div classname='TypeOfPage'>
-                      <todoh3>Task: Peer Eval</todoh3>
+                      <todoh3>Train Link :{element[1]} | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
                     </div>
-                    <div classname='Requester'>
-                      <h4>Requester: Sean Darras</h4>
-                    </div>
+
+                    
                     <div class="tododropdown">
                       <a class="todouser-button">Status</a>
                       <div class="tododropdown-content">
-                        <button type="button" class="IPbutton" onClick={toInProgress}>In-Progress</button>
-                        <button type="button" class="NSbutton" onClick={toNotStarted}>Not Started</button>
-                        <button type="button" class="Cbutton" onClick={tocomplete}>Completed</button>
+                        <button type="button" class="IPbutton" value={element[0]} onClick={toInProgress}>In-Progress</button>
+                        <button type="button" class="NSbutton" value={element[0]} onClick={toNotStarted}>Not Started</button>
+                        <button type="button" class="Cbutton" value={element[0]} onClick={tocomplete}>Completed</button>
                       </div>
                     </div>
                   </li>
-                  <li class="list-group-item-IP">
-                    <div classname='TypeOfPage'>
-                      <todoh3>Task: Training</todoh3>
-                    </div>
-                    <div classname='link'>
-                      <h4>Link: </h4>
-                      <url><a href='http://localhost:3000/employee/4321/training1'>Training 1</a></url>
-                    </div>
-                    <div class="tododropdown">
-                      <a class="todouser-button">Status</a>
-                      <div class="tododropdown-content">
-                        <button type="button" class="IPbutton" onClick={toInProgress}>In-Progress</button>
-                        <button type="button" class="NSbutton" onClick={toNotStarted}>Not Started</button>
-                        <button type="button" class="Cbutton" onClick={tocomplete}>Completed</button>
-                      </div>
-                    </div>
-                  </li>
+                  </>
+                  )
+                  })}
+
+
                 </div>
               </div>
             </perfect-scrollbar>
@@ -89,9 +149,30 @@ function ToDoList() {
             <perfect-scrollbar class="ps-show-limits">
               <div style={{ position: "static" }} class="ps ps--active-y">
                 <div class="ps-content">
+              
+                  {todolist.map((element,index)=>{
+                //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
+                  if(element[4]==1){
+                  return(
+                    <>
                   <li class="list-group-item-NS">
+                    <div classname='TypeOfPage'>
+                      <todoh3>Train Link :{element[1]} | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
+                    </div>
 
+                    
+                    <div class="tododropdown">
+                      <a class="todouser-button">Status</a>
+                      <div class="tododropdown-content">
+                        <button type="button" class="IPbutton" value={element[0]} onClick={toInProgress}>In-Progress</button>
+                        <button type="button" class="NSbutton" value={element[0]} onClick={toNotStarted}>Not Started</button>
+                        <button type="button" class="Cbutton" value={element[0]} onClick={tocomplete}>Completed</button>
+                      </div>
+                    </div>
                   </li>
+                  </>
+                  )
+                }})}
 
                 </div>
               </div>
@@ -108,9 +189,29 @@ function ToDoList() {
             <perfect-scrollbar class="ps-show-limits">
               <div style={{ position: "static" }} class="ps ps--active-y">
                 <div class="ps-content">
-                  <li class="list-group-item-C">
 
+                  {todolist.map((element,index)=>{
+                //0.id,1.training_link,2.start_date,3.end_date,4.completed,5.manager_id
+                  return(
+                    <>
+                  <li class="list-group-item-C">
+                    <div classname='TypeOfPage'>
+                      <todoh3>Train Link :{element[1]} | Requester(id): {element[5]}| Start Date: {element[2]} | End Date: {element[3]}</todoh3>
+                    </div>
+
+                    
+                    <div class="tododropdown">
+                      <a class="todouser-button">Status</a>
+                      <div class="tododropdown-content">
+                        <button type="button" class="IPbutton" value={element[0]} onClick={toInProgress}>In-Progress</button>
+                        <button type="button" class="NSbutton" value={element[0]} onClick={toNotStarted}>Not Started</button>
+                        <button type="button" class="Cbutton" value={element[0]} onClick={tocomplete}>Completed</button>
+                      </div>
+                    </div>
                   </li>
+                  </>
+                  )
+                  })}
 
                 </div>
               </div>

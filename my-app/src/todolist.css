@@ -118,12 +118,13 @@ url {
 }
 
 .tododropdown {
+  z-index: 1;
   position: absolute;
 }
 
 .tododropdown-content {
   display: none;
-  position: absolute;
+  position: relative;
   top: 25px;
   background-color: rgb(140, 140, 140);
   width: 90px;
@@ -132,6 +133,7 @@ url {
 
 .tododropdown:hover .tododropdown-content {
   display: block;
+  
 }
 
 .tododropdown:hover .tododropbtn {
@@ -184,6 +186,7 @@ url {
 }
 
 .list-group-item-IP {
+  z-index: 2;
   display: block;
   position: relative;
   height: 35px;

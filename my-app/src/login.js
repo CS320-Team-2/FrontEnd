@@ -44,13 +44,13 @@ function Login() {
           }
             
           }).then(data=>{
-            console.log('love');
+
             if(data.list[0].isManager==0){
-              setID(data.list[0].emp_id);
+              setID(data.list[0].id);
               login_set_true(true);
               emp_set_true(true);
             }
-            if(data.list[0].isManager==1){
+            else if(data.list[0].isManager==1){
               setID(data.list[0].manager_id);
               login_set_true(true);
               manager_set_true(true);            
