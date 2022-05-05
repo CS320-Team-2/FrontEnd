@@ -2,8 +2,18 @@ import React, { useState, useEffect } from "react";
 import logo from "./ukg_logo.png";
 import "./App.css";
 // import { useState } from 'react';
+import axios from 'axios'
 import {App,App2} from "./username_db";
+
 function Navbar() {
+
+  const [formdataPTO, setformdataPTO] = useState({id: 6, emp_id: 1, manager_id: 1, type:"", start_date:"", end_date:"", additional_info:"", approved: 1});
+  
+  async function handleSubmit(){
+    console.log(formdataPTO);
+    const res = await axios.post('http://localhost:3000/pto/', formdataPTO)
+    console.log(res)
+  }
   return (
     <div className="Navbar">
       <div className="logoImage">
@@ -104,27 +114,27 @@ function Navbar() {
           </a>
           <div class="content">
             <label for="fname">Type: </label>
-            <input type="text" id="lable1" name="mylable"></input>
+            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setformdataPTO({...formdataPTO, type : e.target.value})}} ></input>
             <br></br>
             <p></p>
           </div>
           <div class="popup-body">
             <label for="sdate">Start Date: </label>
-            <input type="date" id="sdate" name="sdate"></input>
+            <input type="date" id="sdate" name="sdate" onChange={(e)=>{setformdataPTO({...formdataPTO, start_date : e.target.value})}}></input>
             <br></br>
           </div>
           <div class="popup-body">
             <label for="edate">End Date: </label>
-            <input type="date" id="edate" name="edate"></input>
+            <input type="date" id="edate" name="edate" onChange={(e)=>{setformdataPTO({...formdataPTO, end_date : e.target.value})}}></input>
             <br></br>
           </div>
           <div class="popup-body">
             <label for="comments">Additional Comments(Optional): </label>
-            <input type="text" id="comments" name="comments"></input>
+            <input type="text" id="comments" name="comments" onChange={(e)=>{setformdataPTO({...formdataPTO, additional_info : e.target.value})}}></input>
             <br></br>
           </div>
           <div className="button-container">
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onClick={handleSubmit}/>
           </div>
           <a class="close" href="#">
             &times;
