@@ -35,12 +35,12 @@ function Login() {
       })
         .then(response => {
            
-          if (response.ok) {
+          if (response.status == 200) {
             console.log('go'); 
             return response.json();
             
           } else {
-            renderErrorMessage();
+            error_login({ name: "ID", message: errors.username});
             throw new Error('Something went wrong ...');
   
           }
