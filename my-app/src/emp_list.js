@@ -6,7 +6,7 @@ function Elist(){
  let web = document.location.href;
  const te = web.split("/");
  let manager = te[4];
- let ab = '2';//manager.split("#")[0];
+ let ab = manager.split("#")[0];
  function handleget(){        
     fetch('http://localhost:3000/employees/'+ab)
     .then(response => {
