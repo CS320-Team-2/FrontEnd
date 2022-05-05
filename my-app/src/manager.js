@@ -125,7 +125,7 @@ return (
 
       <div id="popup1" class="overlay">
        <div class="popup">
-       <h2><center>BOX</center></h2>
+       <h2><center>Assign Training</center></h2>
        <a class="close" href="#">&times;</a>
         <div class="content">
         <form onSubmit={assign_handle}>
@@ -149,7 +149,7 @@ return (
 </div>
       <div id="popup2" class="overlay">
         <div class="popup">
-        <h2><center>BOX</center></h2>
+        <h2><center>Employee List</center></h2>
         <a class="close" href="#">&times;</a>
           <div class="content">
             <div className="elist">

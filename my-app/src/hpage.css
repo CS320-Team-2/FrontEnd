@@ -27,7 +27,7 @@ font-family: 'Times New Roman', Times, serif;
 }
 
 .PTO_component {
-
+  opacity:0.95;
   border: 1.5px solid black;
   display: flex;
   background-color: #f5faf5;
@@ -244,7 +244,9 @@ p {
 }
 
 .ptolist {
+  background-image: url("https://www.icims.com/wp-content/uploads/2021/03/UKG-stylized.png");
   background-color: #dedede;
+  background-size:50%;
   height: 400px;
   overflow: auto;
   border-bottom-right-radius: 3px;
