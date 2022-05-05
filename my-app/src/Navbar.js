@@ -1,9 +1,9 @@
-import React, {useState,useEffect} from "react";
-import logo from './ukg_logo.png';
+import React, { useState, useEffect } from "react";
+import logo from "./ukg_logo.png";
 import "./App.css";
 // import { useState } from 'react';
-import {App,id} from "./username_db";
 import axios from 'axios'
+import {App,App2} from "./username_db";
 
 function Navbar() {
 
@@ -15,12 +15,10 @@ function Navbar() {
     console.log(res)
   }
   return (
-  <div className="Navbar">
-    <div className="logoImage">
-      <img className="logo"
-        src={logo}
-        alt='UKG Icon'></img>
-    </div>
+    <div className="Navbar">
+      <div className="logoImage">
+        <img className="logo" src={logo} alt="UKG Icon"></img>
+      </div>
       <div className="middle">
         <a class="button" href="#popup1">
           <center>Request Peer Eval</center>
@@ -31,26 +29,45 @@ function Navbar() {
         <a class="button" href="#popup3" id="review">
           <center>Write Review</center>
         </a>
+        <a class="button" href="#popup4" id="inbox">
+          <center>Inbox</center>
+        </a>
       </div>
-    <div classname='TypeOfPage'>
+      <div classname="TypeOfPage">
+        {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
+        {/* <h3>AHHHH </h3> */}
+
+        <h3> EMPLOYEE ACCOUNT </h3>
+      </div>
+
+      <div class="dropdown">
+        <a class="user-button">
+          {" "}
+          <App />
+        </a>
+        {/* <a class ="button"><center></center></a> */}
+        <div class="dropdown-content">
+          
+          <a href="http://localhost:3000/"> Logout </a>
+          {/* <a href="#">Logout</a> */}
+          {/* <a href="#">Link 3</a> */}
+        </div>
+      </div>
+    {/* <div classname='TypeOfPage'> */}
     {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
     {/* <h3>AHHHH </h3> */}
-   
-    <h3> EMPLOYEE ACCOUNT </h3>
-    
-    </div>
-    
+    {/* <p> EMPLOYEE ACCOUNT </p> */}
+    {/* </div> */}
   <div class="dropdown">
   <a class="user-button"> <App/></a>
   {/* <a class ="button"><center></center></a> */}
   <div class="dropdown-content">
-    <a href="#"> {id} </a>
-    <a href = 'http://localhost:3000/'> Logout </a>
+    <a href="#"> User ID: <App2/> </a>
+    <a href = 'http://localhost:3001/'> Logout </a>
     {/* <a href="#">Logout</a> */}
     {/* <a href="#">Link 3</a> */}
   </div>
 </div>
-
       {/* <div className="user">
       <p>DanielBarskiy</p>
       <p>32221178</p>
@@ -69,9 +86,6 @@ function Navbar() {
             <br></br>
             <p></p>
           </div>
-          
-          
-
           <div class="popup-header">
             <h2>
               <center>Request Performance Review</center>
@@ -90,7 +104,6 @@ function Navbar() {
           </a>
         </div>
       </div>
-
       <div id="popup2" class="overlay">
         <div class="popup">
           <h2>
@@ -105,7 +118,6 @@ function Navbar() {
             <br></br>
             <p></p>
           </div>
-
           <div class="popup-body">
             <label for="sdate">Start Date: </label>
             <input type="date" id="sdate" name="sdate" onChange={(e)=>{setformdataPTO({...formdataPTO, start_date : e.target.value})}}></input>
@@ -129,9 +141,6 @@ function Navbar() {
           </a>
         </div>
       </div>
-
-      
-
       <div id="popup3" class="overlay">
         <div class="popup">
           <h2>
@@ -227,5 +236,4 @@ function Navbar() {
     </div>
   );
 }
-
 export default Navbar;

@@ -118,12 +118,14 @@ url {
 }
 
 .tododropdown {
+  z-index: 1;
   position: absolute;
 }
 
 .tododropdown-content {
   display: none;
-  position: absolute;
+
+  position: relative;
   top: 25px;
   background-color: rgb(140, 140, 140);
   width: 90px;
@@ -131,7 +133,10 @@ url {
 }
 
 .tododropdown:hover .tododropdown-content {
+  margin-left: 57px;
+  margin-top: -25px;
   display: block;
+  position: absolute;
 }
 
 .tododropdown:hover .tododropbtn {
