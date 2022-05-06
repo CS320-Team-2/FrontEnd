@@ -37,6 +37,7 @@ font-family: 'Times New Roman', Times, serif;
 }
 p1{
   font-size: medium;
+  font-weight: 500;
   margin-left: 5%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

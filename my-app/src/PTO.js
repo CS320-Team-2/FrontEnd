@@ -86,7 +86,7 @@ return (<div className="PTObox">
                           <div className="PTO_component">
         <div className="PTO-TEXT">
 
-        <p1>From employee : {element[1]}</p1>
+        <p1>From Employee : {element[1]}</p1>
         <br/>
         <p1>Type : {element[2]}</p1>
         <br/>
