@@ -10,10 +10,75 @@ function Navbar() {
   const te = web.split("/");
   let employee = te[4];
   let ab = employee.split("#")[0];
+  let url = 'http://localhost:3000/pto/employee/'+ab;
+  let b = parseInt(ab);
+
+
+  const [myreview, setmyreview] = useState([]);
+  const [mypto, setmypto] = useState([]);
   const [managerID, setmanagerID] = useState("");
   const [formdataPTO, setformdataPTO] = useState({emp_id: ab, manager_id: "", type:"", start_date:"", end_date:"", additional_info:"", approved: 0});
   const [performanceData, setperformanceData] = useState({from_employee: ab, to_employee: "", delivery: "", kindness: "", growth: "", comments: ""});
   const [performanceData2, setperformanceData2] = useState({from_employee: ab, to_employee: 0, delivery: 0, kindness: 0, growth: 0, comments: ""});
+  useEffect(() => {
+    // TODO: Call Database API to get database info
+    handleget();
+    handleget_review();
+  }, []);
+
+  function handleget(){
+    fetch(url)//
+    .then(response => {
+        if (response.ok) {
+          console.log('PTO list for emplpyee');
+          return response.json();
+        } else {
+            console.log('doesn t fetch')
+          throw new Error('Something went wrong ...');
+        }
+      })
+     .then(data =>{
+         let temp = [];
+        for (let i in data.list) {
+       
+          let dataTemp = [data.list[i].id,data.list[i].emp_id,data.list[i].type,data.list[i].additional_info,data.list[i].start_date,data.list[i].end_date,data.list[i].approved,data.list[i].manager_id];
+          //0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
+
+            temp.push(dataTemp);
+            
+          }
+            setmypto(temp);
+        }
+      );
+      console.log(mypto);
+      }
+      function handleget_review(){
+        fetch('http://localhost:3000/performance/')
+        .then(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+                console.log('doesn t fetch')
+              throw new Error('Something went wrong ...');
+            }
+          })
+         .then(data =>{
+             let temp = [];
+            for (let i in data.list) {
+              if(data.list[i].from_employee == b && data.list[i].status ==2){
+             let dataTemp = [data.list[i].id,data.list[i].from_employee,data.list[i].status,data.list[i].comments,data.list[i].growth,data.list[i].kindness,data.list[i].delivery];
+             //0.id,1.from_employee,2.status,3.comments,4.growth,5.kindness,6.delivery
+   
+             temp.push(dataTemp);
+                }
+              }
+                setmyreview(temp);
+                console.log(myreview[0]);
+            }
+          );
+          }
+  
+  
   useEffect(() => {
     async function getManagerID(){
       const res = await axios.get('http://localhost:3000/employees/'+ab);
@@ -106,14 +171,64 @@ function Navbar() {
     </div> */}
                 <div id="popup5" class="overlay">
         <div class="popup">
-        <h2><center>BOX</center></h2>
+        <h2><center>PTO Request and Peer Review</center></h2>
         <a class="close" href="#">&times;</a>
           <div class="content">
-            <div className="elist">
-            <ul class="list1 responsive green-checkmarks">
+            <div className="pplist">
+            
+
+            {mypto.map((element,index)=>{
+//0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
+                        
+                  if(element[6]==0){
+                          return (
+                                 <>
+                                 <ul class="list1 responsive green-checkmarks">
+                         Type:{element[2]} | Status: Undecided
+                         </ul>
+                                </>);}
+                  if(element[6]==1)
+                  return (
+                         <>
+                         <ul class="list1 responsive green-checkmarks">
+                 Type:{element[2]} | Status: Approved
+                 </ul>
+                        </>);
+                        if(element[6]==2)
+                        return (
+                               <>
+                               <ul class="list1 responsive green-checkmarks">
+                       Type:{element[2]} | Status: Denied
+                       </ul>
+                              </>);
+                        })
+                    }
 
 
-            </ul>
+            
+                </div>
+
+                <div className="pplist">
+
+                {myreview.map((element,index)=>{
+          //0.id,1.from_employee,2.status,3.comments,4.growth,5.kindness,6.delivery
+                        
+         
+                          return (
+                                 <>
+                                 <ul class="list1 responsive green-checkmarks">
+                                From employee with id:{element[1]}<br/>
+                                Comments: {element[3]}<br/>
+                                Growth: {element[4]}<br/>
+                                Kindness: {element[5]}<br/>
+                                Delivery: {element[6]}<br/>
+                                ————————————————
+
+                         </ul>
+                                </>);
+                        })
+                    }
+
                 </div>
             </div>
           </div>
