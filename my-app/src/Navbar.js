@@ -2,24 +2,108 @@ import React, { useState, useEffect } from "react";
 import logo from "./ukg_logo.png";
 import "./App.css";
 // import { useState } from 'react';
-import axios from 'axios'
-import {App,App2} from "./username_db";
+import axios from "axios";
+import { App, App2 } from "./username_db";
 
 function Navbar() {
+  const [formdataPTO, setformdataPTO] = useState({
+    emp_id: 1,
+    manager_id: 1,
+    type: "",
+    start_date: "",
+    end_date: "",
+    additional_info: "",
+    approved: 0,
+  });
+  const [performanceData, setperformanceData] = useState({
+    from_employee: 1,
+    to_employee: 2,
+    delivery: "",
+    kindness: "",
+    growth: "",
+    comments: "",
+  });
+  const [PTOInbox, setPTOInbox] = useState({
+    emp_id: 1,
+    manager_id: 1,
+    type: "",
+    start_date: "",
+    end_date: "",
+    additional_info: "",
+    approved: 0,
+  });
 
-  const [formdataPTO, setformdataPTO] = useState({emp_id: 1, manager_id: 1, type:"", start_date:"", end_date:"", additional_info:"", approved: 0});
-  const [performanceData, setperformanceData] = useState({from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
-  
-  async function handleSubmit(){
-    console.log(formdataPTO);
-    const res = await axios.post('http://localhost:3000/pto/', formdataPTO)
-    console.log(res)
+  const [perfomanceInbox, setperformanceInbox] = useState({
+    from_employee: 1,
+    to_employee: 2,
+    delivery: "",
+    kindness: "",
+    growth: "",
+    comments: "",
+  });
+
+  async function ptoIn() {
+    console.log(PTOInbox);
+    const res = await axios.get("http://localhost:3000/pto/");
+    console.log(res);
+    let data = res.data;
+    console.log(data);
+    let temp = [];
+    for (let i in data.list) {
+      let dataTemp = [
+        data.list[i].id,
+        data.list[i].emp_id,
+        data.list[i].type,
+        data.list[i].additional_info,
+        data.list[i].start_date,
+        data.list[i].end_date,
+        data.list[i].approved,
+        data.list[i].manager_id,
+      ];
+      //0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
+      temp.push(dataTemp);
+    }
+    setPTOInbox(temp);
   }
 
-  async function handlePerformaceSubmit(){
+  async function handleSubmit() {
+    console.log(formdataPTO);
+    const res = await axios.post("http://localhost:3000/pto/", formdataPTO);
+    console.log(res);
+  }
+
+  async function handlePerformaceSubmit() {
     console.log(performanceData);
-    const res = await axios.post('http://localhost:3000/performance/', performanceData)
-    console.log(res)
+    const res = await axios.post(
+      "http://localhost:3000/performance/",
+      performanceData
+    );
+    console.log(res);
+  }
+
+  async function performanceInbox() {
+    console.log(performanceInbox);
+    const res = await axios.get(
+      "http://localhost:3000/performance/",
+      performanceInbox
+    );
+    console.log(res);
+    let data = res.data;
+    console.log(data);
+    let temp = [];
+    for (let i in data.list) {
+      let dataTemp = [
+        data.list[i].from_employee,
+        data.list[i].to_employee,
+        data.list[i].delivery,
+        data.list[i].kindness,
+        data.list[i].growth,
+        data.list[i].comments,
+      ];
+      //0.from_employee, 1.to_employee, 2.delivery , 3.kindness, 4.growth, 5.comments
+      temp.push(dataTemp);
+    }
+    setperformanceInbox(temp);
   }
 
   return (
@@ -55,44 +139,103 @@ function Navbar() {
         </a>
         {/* <a class ="button"><center></center></a> */}
         <div class="dropdown-content">
-          
           <a href="http://localhost:3000/"> Logout </a>
           {/* <a href="#">Logout</a> */}
           {/* <a href="#">Link 3</a> */}
         </div>
       </div>
-    {/* <div classname='TypeOfPage'> */}
-    {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
-    {/* <h3>AHHHH </h3> */}
-    {/* <p> EMPLOYEE ACCOUNT </p> */}
-    {/* </div> */}
-  <div class="dropdown">
-  <a class="user-button"> <App/></a>
-  {/* <a class ="button"><center></center></a> */}
-  <div class="dropdown-content">
-    <a href="#"> User ID: <App2/> </a>
-    <a href = 'http://localhost:3001/'> Logout </a>
-    {/* <a href="#">Logout</a> */}
-    {/* <a href="#">Link 3</a> */}
-  </div>
-</div>
+      {/* <div classname='TypeOfPage'> */}
+      {/* <a class="button" href="#popup4" id="logout">Logout</a> */}
+      {/* <h3>AHHHH </h3> */}
+      {/* <p> EMPLOYEE ACCOUNT </p> */}
+      {/* </div> */}
+      <div class="dropdown">
+        <a class="user-button">
+          {" "}
+          <App />
+        </a>
+        {/* <a class ="button"><center></center></a> */}
+        <div class="dropdown-content">
+          <a href="#">
+            {" "}
+            User ID: <App2 />{" "}
+          </a>
+          <a href="http://localhost:3001/"> Logout </a>
+          {/* <a href="#">Logout</a> */}
+          {/* <a href="#">Link 3</a> */}
+        </div>
+      </div>
       {/* <div className="user">
       <p>DanielBarskiy</p>
       <p>32221178</p>
     </div> */}
-                <div id="popup5" class="overlay">
+      <div id="popup5" class="overlay">
         <div class="popup">
-        <h2><center>BOX</center></h2>
-        <a class="close" href="#">&times;</a>
+          <h2>
+            <center>PTO</center>
+          </h2>
+          <a class="close" href="#">
+            &times;
+          </a>
           <div class="content">
             <div className="elist">
-            <ul class="list1 responsive green-checkmarks">
-
-
-            </ul>
-                </div>
+              <div className="ptolist">
+                {PTOInbox.map((element, index) => {
+                  //0.id, 1.emp_id, 2.type, 3.additional_info, 4.start, 5.end 6.approved, 7.manager_id
+                  return (
+                    <>
+                      <div className="PTO_component">
+                        <div className="PTO-TEXT">
+                          <p1>Type : {element[2]}</p1>
+                          <br />
+                          <p1>Start Date : {element[4]}</p1>
+                          <br />
+                          <p1>End Date : {element[5]}</p1>
+                          <br />
+                          <p1>Additional Info : {element[3]}</p1>
+                          <br />
+                          <p1>Status : {element[6]}</p1>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+              <ul class="list1 responsive green-checkmarks"></ul>
+            </div>
+            <h2>
+              <center>Reviews</center>
+            </h2>
+            <p></p>
+          </div>
+          <div class="content">
+            <div className="elist">
+              <div className="ptolist">
+                {perfomanceInbox.map((element, index) => {
+                  //0.from_employee, 1.to_employee, 2.delivery , 3.kindness, 4.growth, 5.comments
+                  return (
+                    <>
+                      <div className="PTO_component">
+                        <div className="PTO-TEXT">
+                          <p1>From : {element[1]}</p1>
+                          <br />
+                          <p1>Delivery : {element[2]}</p1>
+                          <br />
+                          <p1>Kindneess : {element[3]}</p1>
+                          <br />
+                          <p1>Growth : {element[4]}</p1>
+                          <br />
+                          <p1>Comments : {element[5]}</p1>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+              </div>
+              <ul class="list1 responsive green-checkmarks"></ul>
             </div>
           </div>
+        </div>
       </div>
       <div id="popup1" class="overlay">
         <div class="popup">
@@ -136,27 +279,58 @@ function Navbar() {
           </a>
           <div class="content">
             <label for="fname">Type: </label>
-            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setformdataPTO({...formdataPTO, type : e.target.value})}} ></input>
+            <input
+              type="text"
+              id="lable1"
+              name="mylable"
+              onChange={(e) => {
+                setformdataPTO({ ...formdataPTO, type: e.target.value });
+              }}
+            ></input>
             <br></br>
             <p></p>
           </div>
           <div class="popup-body">
             <label for="sdate">Start Date: </label>
-            <input type="date" id="sdate" name="sdate" onChange={(e)=>{setformdataPTO({...formdataPTO, start_date : e.target.value})}}></input>
+            <input
+              type="date"
+              id="sdate"
+              name="sdate"
+              onChange={(e) => {
+                setformdataPTO({ ...formdataPTO, start_date: e.target.value });
+              }}
+            ></input>
             <br></br>
           </div>
           <div class="popup-body">
             <label for="edate">End Date: </label>
-            <input type="date" id="edate" name="edate" onChange={(e)=>{setformdataPTO({...formdataPTO, end_date : e.target.value})}}></input>
+            <input
+              type="date"
+              id="edate"
+              name="edate"
+              onChange={(e) => {
+                setformdataPTO({ ...formdataPTO, end_date: e.target.value });
+              }}
+            ></input>
             <br></br>
           </div>
           <div class="popup-body">
             <label for="comments">Additional Comments(Optional): </label>
-            <input type="text" id="comments" name="comments" onChange={(e)=>{setformdataPTO({...formdataPTO, additional_info : e.target.value})}}></input>
+            <input
+              type="text"
+              id="comments"
+              name="comments"
+              onChange={(e) => {
+                setformdataPTO({
+                  ...formdataPTO,
+                  additional_info: e.target.value,
+                });
+              }}
+            ></input>
             <br></br>
           </div>
           <div className="button-container">
-            <input type="submit" value="Submit" onClick={handleSubmit}/>
+            <input type="submit" value="Submit" onClick={handleSubmit} />
           </div>
           <a class="close" href="#">
             &times;
@@ -173,26 +347,86 @@ function Navbar() {
           </a>
           <div class="content">
             <label for="fname">Send To: </label>
-            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setperformanceData({...performanceData, to_employee : e.target.value})}}></input>
+            <input
+              type="text"
+              id="lable1"
+              name="mylable"
+              onChange={(e) => {
+                setperformanceData({
+                  ...performanceData,
+                  to_employee: e.target.value,
+                });
+              }}
+            ></input>
             <br></br>
             <p></p>
             <label for="fname">Growth Feedback: </label>
             <ul class="likert">
               <li> None </li>
               <li>
-                <input type="radio" name="growth" value="1" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="growth"
+                  value="1"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      growth: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="growth" value="2" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="growth"
+                  value="2"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      growth: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="growth" value="3" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="growth"
+                  value="3"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      growth: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="growth" value="4" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="growth"
+                  value="4"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      growth: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="growth" value="5" onClick={(e)=>{setperformanceData({...performanceData, growth : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="growth"
+                  value="5"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      growth: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li> A lot </li>
             </ul>
@@ -202,19 +436,69 @@ function Navbar() {
             <ul class="likert">
               <li> None </li>
               <li>
-                <input type="radio" name="kind" value="1" onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="kind"
+                  value="1"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      kindness: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="kind" value="2"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="kind"
+                  value="2"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      kindness: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="kind" value="3"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="kind"
+                  value="3"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      kindness: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="kind" value="4"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="kind"
+                  value="4"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      kindness: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="kind" value="5"  onClick={(e)=>{setperformanceData({...performanceData, kindness : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="kind"
+                  value="5"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      kindness: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li> Very </li>
             </ul>
@@ -224,19 +508,69 @@ function Navbar() {
             <ul class="likert">
               <li> Needs Improvement </li>
               <li>
-                <input type="radio" name="delivery" value="1"  onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="delivery"
+                  value="1"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      delivery: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="delivery" value="2" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="delivery"
+                  value="2"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      delivery: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="delivery" value="3" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="delivery"
+                  value="3"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      delivery: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="delivery" value="4" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="delivery"
+                  value="4"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      delivery: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li>
-                <input type="radio" name="delivery" value="5" onClick={(e)=>{setperformanceData({...performanceData, delivery : e.target.value})}}/>
+                <input
+                  type="radio"
+                  name="delivery"
+                  value="5"
+                  onClick={(e) => {
+                    setperformanceData({
+                      ...performanceData,
+                      delivery: e.target.value,
+                    });
+                  }}
+                />
               </li>
               <li> Very Well </li>
             </ul>
@@ -248,10 +582,19 @@ function Navbar() {
               name="rev-desc"
               rows="5"
               cols="47"
-              onChange={(e)=>{setperformanceData({...performanceData, comments : e.target.value})}}
+              onChange={(e) => {
+                setperformanceData({
+                  ...performanceData,
+                  comments: e.target.value,
+                });
+              }}
             ></textarea>
             <div className="button-container">
-              <input type="submit" value="Submit" onClick={handlePerformaceSubmit}/>
+              <input
+                type="submit"
+                value="Submit"
+                onClick={handlePerformaceSubmit}
+              />
             </div>
           </div>
         </div>
