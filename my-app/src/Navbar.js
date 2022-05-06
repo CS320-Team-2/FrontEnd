@@ -6,9 +6,27 @@ import axios from 'axios'
 import {App,App2} from "./username_db";
 
 function Navbar() {
-
-  const [formdataPTO, setformdataPTO] = useState({emp_id: 1, manager_id: 1, type:"", start_date:"", end_date:"", additional_info:"", approved: 0});
-  const [performanceData, setperformanceData] = useState({from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
+  let web = document.location.href;
+  const te = web.split("/");
+  let employee = te[4];
+  let ab = employee.split("#")[0];
+  const [managerID, setmanagerID] = useState("");
+  const [formdataPTO, setformdataPTO] = useState({emp_id: ab, manager_id: "", type:"", start_date:"", end_date:"", additional_info:"", approved: 0});
+  const [performanceData, setperformanceData] = useState({from_employee: ab, to_employee: "", delivery: "", kindness: "", growth: "", comments: ""});
+  const [performanceData2, setperformanceData2] = useState({from_employee: ab, to_employee: 0, delivery: 0, kindness: 0, growth: 0, comments: ""});
+  useEffect(() => {
+    async function getManagerID(){
+      const res = await axios.get('http://localhost:3000/employees/'+ab);
+      setmanagerID(res.data.list[0].manager_id);
+    }
+    if(managerID === ""){
+      getManagerID();
+    }
+    else{
+      setformdataPTO({...formdataPTO,manager_id:managerID});
+    }
+  }, [managerID]);
+  
   
   async function handleSubmit(){
     console.log(formdataPTO);
@@ -19,6 +37,12 @@ function Navbar() {
   async function handlePerformaceSubmit(){
     console.log(performanceData);
     const res = await axios.post('http://localhost:3000/performance/', performanceData)
+    console.log(res)
+  }
+
+  async function handlePerformaceSubmit2(){
+    console.log(performanceData2);
+    const res = await axios.post('http://localhost:3000/performance/', performanceData2)
     console.log(res)
   }
 
@@ -96,30 +120,21 @@ function Navbar() {
       </div>
       <div id="popup1" class="overlay">
         <div class="popup">
-          <h2>
-            <center>Peer Eval Request</center>
-          </h2>
           <a class="close" href="#">
             &times;
           </a>
-          <div class="content">
-            <label for="fname">Manager Name: </label>
-            <input type="text" id="lable1" name="mylable"></input>
-            <br></br>
-            <p></p>
-          </div>
           <div class="popup-header">
             <h2>
-              <center>Request Performance Review</center>
+              <center>Request Peer Evaluation</center>
             </h2>
           </div>
           <div class="popup-body">
             <label for="fname">Request To: </label>
-            <input type="text" id="lable1" name="mylable"></input>
+            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setperformanceData2({...performanceData2, to_employee : e.target.value})}}></input>
             <br></br>
           </div>
           <div className="button-container">
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onClick={handlePerformaceSubmit2}/>
           </div>
           <a class="close" href="#">
             &times;

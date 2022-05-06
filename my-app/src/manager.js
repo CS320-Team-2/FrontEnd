@@ -10,17 +10,17 @@ import axios from 'axios'
 
 
 function Manager(){
-    const [performanceData, setperformanceData] = useState({from_employee: 1, to_employee: 2, delivery: "", kindness: "", growth: "", comments: ""});
+    let web = document.location.href;
+    const te = web.split("/");
+    let manager = te[4];
+    let ab = manager.split("#")[0];
+    const [performanceData, setperformanceData] = useState({from_employee: ab, to_employee: "", delivery: "", kindness: "", growth: "", comments: ""});
     
     async function handlePerformaceSubmit(){
       console.log(performanceData);
       const res = await axios.post('http://localhost:3000/performance/', performanceData)
       console.log(res)
     }
-    let web = document.location.href;
-    const te = web.split("/");
-    let manager = te[4];
-    let ab = manager.split("#")[0];
     const[as_to, setas_to] = useState('');
     const[as_url, setas_url] = useState('');
     const[ATlist,setATlist] = useState([['emp-id','url','2022-5-1-13-00','end_date',0],['emp-id2','url2','start_date2','end_date2',1],['emp-id','url','start_date','end_date',2]]);
