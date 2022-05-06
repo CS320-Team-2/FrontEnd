@@ -18,8 +18,8 @@ function Navbar() {
   const [mypto, setmypto] = useState([]);
   const [managerID, setmanagerID] = useState("");
   const [formdataPTO, setformdataPTO] = useState({emp_id: ab, manager_id: "", type:"", start_date:"", end_date:"", additional_info:"", approved: 0});
-  const [performanceData, setperformanceData] = useState({from_employee: ab, to_employee: "", delivery: "", kindness: "", growth: "", comments: ""});
-  const [performanceData2, setperformanceData2] = useState({from_employee: ab, to_employee: 0, delivery: 0, kindness: 0, growth: 0, comments: ""});
+  const [performanceData, setperformanceData] = useState({from_employee: "", to_employee: ab, delivery: "", kindness: "", growth: "", comments: "", status : 2});
+  const [performanceData2, setperformanceData2] = useState({from_employee: ab, to_employee: 0, delivery: 0, kindness: 0, growth: 0, comments: "", status : 0});
   useEffect(() => {
     // TODO: Call Database API to get database info
     handleget();
@@ -303,7 +303,7 @@ function Navbar() {
           </a>
           <div class="content">
             <label for="fname">Send To: </label>
-            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setperformanceData({...performanceData, to_employee : e.target.value})}}></input>
+            <input type="text" id="lable1" name="mylable" onChange={(e)=>{setperformanceData({...performanceData, from_employee : e.target.value})}}></input>
             <br></br>
             <p></p>
             <label for="fname">Growth Feedback: </label>
