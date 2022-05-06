@@ -213,8 +213,6 @@ input[type="text"] {
   box-shadow: inset 0 0 0.7px 0.7px rgba(0, 0, 0, 0.2);
 }
 
-
-
 #copyright {
   color: #fff;
 }
@@ -261,7 +259,7 @@ input[type="text"] {
   z-index: 3;
   position: relative;
   max-height: 30%;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .submit-button {
@@ -293,6 +291,7 @@ input[type="text"] {
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  overflow-y: auto;
 }
 .overlay:target {
   visibility: visible;
