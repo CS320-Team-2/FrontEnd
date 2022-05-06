@@ -14,6 +14,7 @@ function Manager(){
     const te = web.split("/");
     let manager = te[4];
     let ab = manager.split("#")[0];
+    var b = parseInt(ab);
     const [performanceData, setperformanceData] = useState({from_employee: ab, to_employee: "", delivery: "", kindness: "", growth: "", comments: ""});
     
     async function handlePerformaceSubmit(){
@@ -34,7 +35,7 @@ function Manager(){
 
 
     function GetATbox() {
-      let url = 'http://localhost:3000/assignedtraining/'+ab;
+      let url = 'http://localhost:3000/assignedtraining/';
    
       fetch(url)//
         .then(response => {
@@ -49,9 +50,11 @@ function Manager(){
          .then(data =>{
              let temp = [];
             for (let i in data.list) {
+              if(data.list[i].manager_id == b){
                 let dataTemp = [data.list[i].emp_id,data.list[i].training_link,data.list[i].start_date,data.list[i].end_date,data.list[i].completed,];
                 set_id(i);
                 temp.push(dataTemp);
+              }
                 }
                 setATlist(temp);
             }
@@ -69,7 +72,7 @@ function Manager(){
         return !isNaN(n/0);
         }
 
-      var b = parseInt(ab);
+   
       //console.log(isNum(te[0]));
       fetch('http://localhost:3000/assignedtraining/', {
       method: 'POST',
@@ -80,7 +83,8 @@ function Manager(){
                 training_link: as_url,
                 additional_info:'',
                 start_date: start_date,
-                end_date: end_date
+                end_date: end_date,
+                completed:0
         }
     }),
       headers: {

@@ -7,8 +7,8 @@ function PTO() {
     const te = web.split("/");
     let manager = te[4];
     let ab = manager.split("#")[0];
-    let id = ab.toString();
-    let url = 'http://localhost:3000/pto/'+'2';
+    let id = parseInt(ab);
+    let url = 'http://localhost:3000/pto/manager/'+ab;
     useEffect(() => {
         // TODO: Call Database API to get database info
         handleget();

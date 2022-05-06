@@ -53,7 +53,7 @@ function Login() {
               emp_set_true(true);
             }
             else if(data.list[0].isManager==1){
-              setID(data.list[0].manager_id);
+              setID(data.list[0].id);
               login_set_true(true);
               manager_set_true(true);            
             }
