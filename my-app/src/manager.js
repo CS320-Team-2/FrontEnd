@@ -23,7 +23,7 @@ function Manager(){
     }
     const[as_to, setas_to] = useState('');
     const[as_url, setas_url] = useState('');
-    const[ATlist,setATlist] = useState([['emp-id','url','2022-5-1-13-00','end_date',0],['emp-id2','url2','start_date2','end_date2',1],['emp-id','url','start_date','end_date',2]]);
+    const[ATlist,setATlist] = useState([]);
     const[start_date,set_start_date]= useState('');
     const[end_date,set_end_date]= useState('');
     const[id,set_id]=useState(0);
@@ -35,10 +35,11 @@ function Manager(){
 
     function GetATbox() {
       let url = 'http://localhost:3000/assignedtraining/'+ab;
-      console.log('it runs');
+   
       fetch(url)//
         .then(response => {
             if (response.ok) {
+              console.log('ATbox runs');
               return response.json();
             } else {
                 console.log('doesn t fetch')
@@ -69,7 +70,7 @@ function Manager(){
         }
 
       var b = parseInt(ab);
-      console.log(isNum(te[0]));
+      //console.log(isNum(te[0]));
       fetch('http://localhost:3000/assignedtraining/', {
       method: 'POST',
       body: JSON.stringify({
@@ -87,12 +88,13 @@ function Manager(){
       }
     }).then(response => {
       if(response.ok){  
-        console.log('run');
+        console.log('assign run');
+        GetATbox();
     } else{
       throw new Error('Something went wrong ...');
     }
       });
-      GetATbox();
+ 
     }
 return (
       <div className="Page">
